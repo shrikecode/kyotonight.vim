@@ -2,10 +2,10 @@
 
 # Kyoto Night NeoVim / Vim theme
 
-Colorscheme inspired by [Enki Theme](https://github.com/enkia/enki-theme) variant Tokyo Night.
+Colorscheme inspired by [[https://github.com/enkia/enki-theme][Enki Theme]] variant Tokyo Night.
 
-I'm aware that there already is a [Tokyo Night Vim theme](https://github.com/folke/tokyonight.nvim), but I find it a little too flashy.
+I'm aware that there already is a [[https://github.com/folke/tokyonight.nvim][Tokyo Night Vim theme]], but I find it a little too flashy.
 
 So, I decided to make my own, that would be closer to Enki's Sublime Theme, and easier for the eyes.
 
-The theme's code is based on [Nord Theme](https://github.com/arcticicestudio/nord-vim).
+The theme's code is based on [[https://github.com/arcticicestudio/nord-vim][Nord Theme]].
