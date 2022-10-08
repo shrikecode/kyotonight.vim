@@ -103,7 +103,7 @@ call s:hi("Underline", "", "", "", "", s:underline, "")
 call s:hi("ColorColumn", "", s:kyotonight2_gui, "NONE", s:kyotonight1_term, "", "")
 call s:hi("Cursor", s:kyotonight1_gui, s:kyotonight4_gui, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:kyotonight0_gui, "NONE", s:kyotonight1_term, "NONE", "")
-call s:hi("Error", s:kyotonight4_gui, s:kyotonight11_gui, "", s:kyotonight11_term, "", "")
+call s:hi("Error", s:kyotonight1_gui, s:kyotonight11_gui, "", s:kyotonight11_term, "", "")
 call s:hi("iCursor", s:kyotonight0_gui, s:kyotonight4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:kyotonight3_gui, "NONE", s:kyotonight3_term, "NONE", "", "")
 call s:hi("MatchParen", s:kyotonight8_gui, s:kyotonight3_gui, s:kyotonight8_term, s:kyotonight3_term, "", "")
@@ -186,7 +186,7 @@ call s:hi("Directory", s:kyotonight8_gui, "", s:kyotonight8_term, "NONE", "", ""
 
 "+--- Prompt/Status ---+
 call s:hi("EndOfBuffer", s:kyotonight1_gui, "", s:kyotonight1_term, "NONE", "", "")
-call s:hi("ErrorMsg", s:kyotonight4_gui, s:kyotonight11_gui, "NONE", s:kyotonight11_term, "", "")
+call s:hi("ErrorMsg", s:kyotonight1_gui, s:kyotonight11_gui, "NONE", s:kyotonight11_term, "", "")
 call s:hi("ModeMsg", s:kyotonight4_gui, "", "", "", "", "")
 call s:hi("MoreMsg", s:kyotonight8_gui, "", s:kyotonight8_term, "", "", "")
 call s:hi("Question", s:kyotonight4_gui, "", "NONE", "", "", "")
@@ -211,7 +211,7 @@ call s:hi("Search", s:kyotonight1_gui, s:kyotonight8_gui, s:kyotonight1_term, s:
 "+--- Tabs ---+
 call s:hi("TabLine", s:kyotonight4_gui, s:kyotonight1_gui, "NONE", s:kyotonight1_term, "NONE", "")
 call s:hi("TabLineFill", s:kyotonight3_gui, s:kyotonight0_gui, "NONE", s:kyotonight1_term, "NONE", "")
-call s:hi("TabLineSel", s:kyotonight8_gui, s:kyotonight3_gui, s:kyotonight8_term, s:kyotonight3_term, "NONE", "")
+call s:hi("TabLineSel", s:kyotonight4_gui, s:kyotonight1_gui, s:kyotonight8_term, s:kyotonight3_term, "NONE", "")
 
 "+--- Window ---+
 call s:hi("Title", s:kyotonight4_gui, "", "NONE", "", "NONE", "")
@@ -651,6 +651,12 @@ call s:hi("NvimTreeNormal", s:kyotonight4_gui, s:kyotonight0_gui, s:kyotonight5_
 call s:hi("NvimTreeWinSeparator", s:kyotonight0_gui, s:kyotonight0_gui, s:kyotonight3_term, "", "", "")
 call s:hi("NvimTreeNormalNC", s:kyotonight4_gui, s:kyotonight0_gui, s:kyotonight5_term, "", "", "")
 call s:hi("NvimTreeRootFolder", s:kyotonight15_gui, s:kyotonight0_gui, s:kyotonight15_term, "", s:bold, "")
+
+" barbar.nvim
+" > romgrk/barbar.nvim
+call s:hi("BufferCurrentMod", s:kyotonight13_gui, s:kyotonight1_gui, s:kyotonight13_term, "", "", "")
+call s:hi("BufferVisibleMod", s:kyotonight13_gui, s:kyotonight3_gui, s:kyotonight13_term, "", "", "")
+call s:hi("BufferInactiveMod", s:kyotonight13_gui, s:kyotonight0_gui, s:kyotonight13_term, "", "", "")
 
 "+--- Languages ---+
 " Haskell

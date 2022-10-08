@@ -71,6 +71,7 @@ vim.cmd[[colorscheme kyotonight]]
 
 - [x] Everything that [[https://github.com/arcticicestudio/nord-vim][Nord Theme]] supports 
 - [x] [[https://github.com/glepnir/dashboard-nvim][dashboard-nvim]]
+- [x] [[https://github.com/romgrk/barbar.nvim][barbar.nvim]]
 
 ** Todos 
 
@@ -78,3 +79,4 @@ vim.cmd[[colorscheme kyotonight]]
 - [x] Better OrgMode syntax coloring
 - [ ] Add some screenshots
 - [x] Better README (with config examples and supported options)
+
