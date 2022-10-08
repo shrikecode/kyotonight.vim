@@ -211,7 +211,7 @@ call s:hi("Search", s:kyotonight1_gui, s:kyotonight8_gui, s:kyotonight1_term, s:
 "+--- Tabs ---+
 call s:hi("TabLine", s:kyotonight4_gui, s:kyotonight1_gui, "NONE", s:kyotonight1_term, "NONE", "")
 call s:hi("TabLineFill", s:kyotonight3_gui, s:kyotonight0_gui, "NONE", s:kyotonight1_term, "NONE", "")
-call s:hi("TabLineSel", s:kyotonight4_gui, s:kyotonight1_gui, s:kyotonight8_term, s:kyotonight3_term, "NONE", "")
+call s:hi("TabLineSel", s:kyotonight3_gui, s:kyotonight1_gui, s:kyotonight8_term, s:kyotonight3_term, "NONE", "")
 
 "+--- Window ---+
 call s:hi("Title", s:kyotonight4_gui, "", "NONE", "", "NONE", "")
