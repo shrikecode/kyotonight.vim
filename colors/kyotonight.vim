@@ -647,9 +647,9 @@ call s:hi("DashboardShortCut", s:kyotonight7_gui, "", s:kyotonight7_term, "", ""
 
 " nvim-tree.lua
 " > nvim-tree/nvim-tree.lua
-call s:hi("NvimTreeNormal", s:kyotonight4_gui, s:kyotonight0_gui, s:kyotonight4_term, "", "", "")
+call s:hi("NvimTreeNormal", s:kyotonight4_gui, s:kyotonight0_gui, s:kyotonight5_term, "", "", "")
 call s:hi("NvimTreeWinSeparator", s:kyotonight0_gui, s:kyotonight0_gui, s:kyotonight3_term, "", "", "")
-call s:hi("NvimTreeNormalNC", s:kyotonight4_gui, s:kyotonight0_gui, s:kyotonight4_term, "", "", "")
+call s:hi("NvimTreeNormalNC", s:kyotonight4_gui, s:kyotonight0_gui, s:kyotonight5_term, "", "", "")
 call s:hi("NvimTreeRootFolder", s:kyotonight15_gui, s:kyotonight0_gui, s:kyotonight15_term, "", s:bold, "")
 
 "+--- Languages ---+
