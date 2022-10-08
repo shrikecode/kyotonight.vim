@@ -1,10 +1,20 @@
 #+title: Kyoto Night NeoVim / Vim theme
 
-Vim / NeoVim theme that is a marriage between Tokyo Night and Nord Theme. And they went on honeymoon to Kyoto.
+Vim / NeoVim theme that is a marriage of Tokyo Night and Nord Theme. And they went on honeymoon to Kyoto I guess.
 
 ** Screenshots
 
-Coming soon...
+[[https://i.imgur.com/ZB66ksL.png]]
+
+[[https://imgur.com/aFKkiwj.png]]
+
+[[https://imgur.com/6KYyHzH.png]]
+
+*** Plugins visible in screenshots
+- [[https://github.com/nvim-lualine/lualine.nvim][nvim-lualine/lualine.nvim]] with [[https://github.com/folke/tokyonight.nvim][folke/tokyonight.nvim]] theme
+- [[https://github.com/glepnir/dashboard-nvim][glepnir/dashboard-nvim]]
+- [[https://github.com/romgrk/barbar.nvim][romgrk/barbar.nvim]]
+- [[https://github.com/nvim-tree/nvim-tree.lua][nvim-tree/nvim-tree.lua]]
 
 ** Why another Tokyo Night VIM theme...
 
@@ -70,13 +80,12 @@ vim.cmd[[colorscheme kyotonight]]
 ** Supported plugins
 
 - [x] Everything that [[https://github.com/arcticicestudio/nord-vim][Nord Theme]] supports 
-- [x] [[https://github.com/glepnir/dashboard-nvim][dashboard-nvim]]
-- [x] [[https://github.com/romgrk/barbar.nvim][barbar.nvim]]
+- [x] [[https://github.com/glepnir/dashboard-nvim][glepnir/dashboard-nvim]]
+- [x] [[https://github.com/romgrk/barbar.nvim][romgrk/barbar.nvim]]
+- [x] [[https://github.com/nvim-tree/nvim-tree.lua][nvim-tree/nvim-tree.lua]]
 
-** Todos 
+** Ackowledgements
 
-- [x] Better NvimTree theme
-- [x] Better OrgMode syntax coloring
-- [ ] Add some screenshots
-- [x] Better README (with config examples and supported options)
-
+- [[https://github.com/enkia][Enki]] for wonderful Tokyo Night theme
+- [[https://github.com/folke][Folke]] for bringing it into Vim
+- [[https://github.com/arcticicestudio][ArcticIceStudio]] for Nord Theme for Vim, on which code this theme is based on
