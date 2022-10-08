@@ -10,9 +10,15 @@ So, I decided to make my own, that would be closer to Enki's Sublime Theme, and 
 
 The theme's code is based on [[https://github.com/arcticicestudio/nord-vim][Nord Theme]].
 
+** Supported plugins
+
+- [x] Everything that [[https://github.com/arcticicestudio/nord-vim][Nord Theme]] supports 
+- [x] [[https://github.com/glepnir/dashboard-nvim][dashboard-nvim]]
+- [ ] Lualine
+
 ** Todos 
 
-- Figure out some missing colors ([[https://github.com/glepnir/dashboard-nvim][dashboard]] has no colors)
-- Maybe make lualine theme
-- Check tty looks
-- Make sidebar more like folke's
+- [ ] Better NvimTree theme
+- [ ] Better OrgMode syntax coloring
+- [ ] Add some screenshots
+- [ ] Better README (with config examples and supported options)
