@@ -22,11 +22,11 @@ let s:kyotonight3_gui = "#414868"
 let s:kyotonight3_gui_bright = "#565f89"
 let s:kyotonight4_gui = "#a9b1d6"
 let s:kyotonight5_gui = "#cfc9c2"
-let s:kyotonight6_gui = "#d5d6db"
+let s:kyotonight6_gui = "#b4f9f8"
 let s:kyotonight7_gui = "#73daca"
 let s:kyotonight8_gui = "#7dcfff"
 let s:kyotonight9_gui = "#7aa2f7"
-let s:kyotonight10_gui = "#b4f9f8"
+let s:kyotonight10_gui = "#2ac3de"
 let s:kyotonight11_gui = "#f7768e"
 let s:kyotonight12_gui = "#ff9e64"
 let s:kyotonight13_gui = "#e0af68"
@@ -219,7 +219,7 @@ call s:hi("Title", s:kyotonight4_gui, "", "NONE", "", "NONE", "")
 if g:kyotonight_bold_vertical_split_line == 0
   call s:hi("VertSplit", s:kyotonight3_gui, s:kyotonight1_gui, s:kyotonight3_term, "NONE", "NONE", "")
 else
-  call s:hi("VertSplit", s:kyotonight0_gui, s:kyotonight0_gui, s:kyotonight3_term, s:kyotonight1_term, "NONE", "")
+  call s:hi("VertSplit", s:kyotonight0_gui, s:kyotonight0_gui, s:kyotonight3_term, s:kyotonight3_term, "NONE", "")
 endif
 
 "+----------------------+
@@ -644,6 +644,13 @@ call s:hi("DashboardHeader", s:kyotonight8_gui, "", s:kyotonight8_term, "", "", 
 call s:hi("DashboardCenter", s:kyotonight6_gui, "", s:kyotonight6_term, "", "", "")
 call s:hi("DashboardFooter", s:kyotonight13_gui, "", s:kyotonight13_term, "", s:italic, "")
 call s:hi("DashboardShortCut", s:kyotonight7_gui, "", s:kyotonight7_term, "", "", "")
+
+" nvim-tree.lua
+" > nvim-tree/nvim-tree.lua
+call s:hi("NvimTreeNormal", s:kyotonight4_gui, s:kyotonight0_gui, s:kyotonight4_term, "", "", "")
+call s:hi("NvimTreeWinSeparator", s:kyotonight0_gui, s:kyotonight0_gui, s:kyotonight3_term, "", "", "")
+call s:hi("NvimTreeNormalNC", s:kyotonight4_gui, s:kyotonight0_gui, s:kyotonight4_term, "", "", "")
+call s:hi("NvimTreeRootFolder", s:kyotonight15_gui, s:kyotonight0_gui, s:kyotonight15_term, "", s:bold, "")
 
 "+--- Languages ---+
 " Haskell

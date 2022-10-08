@@ -1,24 +1,80 @@
-#+title: README
+#+title: Kyoto Night NeoVim / Vim theme
 
-* Kyoto Night NeoVim / Vim theme
+Vim / NeoVim theme that is a marriage between Tokyo Night and Nord Theme. And they went on honeymoon to Kyoto.
 
-Colorscheme inspired by [[https://github.com/enkia/enki-theme][Enki Theme]] variant Tokyo Night.
+** Screenshots
+
+Coming soon...
+
+** Why another Tokyo Night VIM theme...
 
 I'm aware that there already is a [[https://github.com/folke/tokyonight.nvim][Tokyo Night Vim theme]], but I find it a little too flashy.
-
 So, I decided to make my own, that would be closer to Enki's Sublime Theme, and easier for the eyes.
 
-The theme's code is based on [[https://github.com/arcticicestudio/nord-vim][Nord Theme]].
+** About
+
+Colorscheme inspired by [[https://github.com/enkia/enki-theme][Enki Theme]] variant Tokyo Night, made using [[https://github.com/enkia/tokyo-night-vscode-theme#color-palette][Tokyo Night color pallette]].
+The theme's code is based on [[https://github.com/arcticicestudio/nord-vim][Nord Theme]] (because I suck at Lua and VimScript + Nord's tame color combinations is what I needed).
+
+** Installation
+
+*** Vim-plug
+
+#+begin_src VimScript
+Plug 'laniusone/kyotonight'
+#+end_src
+
+*** Packer
+
+#+begin_src Lua
+use 'laniusone/kyotonight'
+#+end_src
+
+** Configuration
+
+All supported config options are basically ported from Nord Theme, but below is list of them with default values.
+Make sure these are configured before calling `colorscheme kyotonight`.
+
+*** VimScript
+
+#+begin_src VimScript
+let g:kyotonight_bold = 1
+let g:kyotonight_underline = 1
+let g:kyotonight_italic = 0
+let g:kyotonight_italic_comments = 0
+let g:kyotonight_uniform_status_lines = 0
+let g:kyotonight_bold_vertical_split_line = 0
+let g:kyotonight_cursor_line_number_background = 0
+let g:kyotonight_uniform_diff_background = 0
+
+colorscheme kyotonight
+#+end_src
+
+*** Lua
+
+#+begin_src Lua
+local g = vim.g
+
+g.kyotonight_bold = 1
+g.kyotonight_underline = 1
+g.kyotonight_italic = 0
+g.kyotonight_italic_comments = 0
+g.kyotonight_uniform_status_lines = 0
+g.kyotonight_bold_vertical_split_line = 0
+g.kyotonight_cursor_line_number_background = 0
+g.kyotonight_uniform_diff_background = 0
+
+vim.cmd[[colorscheme kyotonight]]
+#+end_src
 
 ** Supported plugins
 
 - [x] Everything that [[https://github.com/arcticicestudio/nord-vim][Nord Theme]] supports 
 - [x] [[https://github.com/glepnir/dashboard-nvim][dashboard-nvim]]
-- [ ] Lualine
 
 ** Todos 
 
-- [ ] Better NvimTree theme
-- [ ] Better OrgMode syntax coloring
+- [x] Better NvimTree theme
+- [x] Better OrgMode syntax coloring
 - [ ] Add some screenshots
-- [ ] Better README (with config examples and supported options)
+- [x] Better README (with config examples and supported options)
