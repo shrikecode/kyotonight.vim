@@ -15,10 +15,10 @@ let g:colors_name = "kyotonight"
 let s:kyotonight_vim_version="0.0.1"
 set background=dark
 
-let s:kyotonight0_gui = "#1a1b26"
-let s:kyotonight1_gui = "#24283b"
-let s:kyotonight2_gui = "#414868"
-let s:kyotonight3_gui = "#565f89"
+let s:kyotonight0_gui = "#0f0f14"
+let s:kyotonight1_gui = "#1a1b26"
+let s:kyotonight2_gui = "#24283b"
+let s:kyotonight3_gui = "#414868"
 let s:kyotonight3_gui_bright = "#565f89"
 let s:kyotonight4_gui = "#a9b1d6"
 let s:kyotonight5_gui = "#cfc9c2"
@@ -46,30 +46,6 @@ let s:kyotonight12_term = "11"
 let s:kyotonight13_term = "3"
 let s:kyotonight14_term = "2"
 let s:kyotonight15_term = "5"
-
-let s:kyotonight3_gui_brightened = [
-  \ s:kyotonight3_gui,
-  \ "#4e586d",
-  \ "#505b70",
-  \ "#525d73",
-  \ "#556076",
-  \ "#576279",
-  \ "#59647c",
-  \ "#5b677f",
-  \ "#5d6982",
-  \ "#5f6c85",
-  \ "#616e88",
-  \ "#63718b",
-  \ "#66738e",
-  \ "#687591",
-  \ "#6a7894",
-  \ "#6d7a96",
-  \ "#6f7d98",
-  \ "#72809a",
-  \ "#75829c",
-  \ "#78859e",
-  \ "#7b88a1",
-\ ]
 
 let g:kyotonight_bold = get(g:, "kyotonight_bold", 1)
 let s:bold = (g:kyotonight_bold == 0) ? "" : "bold,"
@@ -124,26 +100,26 @@ call s:hi("Italic", "", "", "", "", s:italic, "")
 call s:hi("Underline", "", "", "", "", s:underline, "")
 
 "+--- Editor ---+
-call s:hi("ColorColumn", "", s:kyotonight1_gui, "NONE", s:kyotonight1_term, "", "")
-call s:hi("Cursor", s:kyotonight0_gui, s:kyotonight4_gui, "", "NONE", "", "")
-call s:hi("CursorLine", "", s:kyotonight1_gui, "NONE", s:kyotonight1_term, "NONE", "")
+call s:hi("ColorColumn", "", s:kyotonight2_gui, "NONE", s:kyotonight1_term, "", "")
+call s:hi("Cursor", s:kyotonight1_gui, s:kyotonight4_gui, "", "NONE", "", "")
+call s:hi("CursorLine", "", s:kyotonight0_gui, "NONE", s:kyotonight1_term, "NONE", "")
 call s:hi("Error", s:kyotonight4_gui, s:kyotonight11_gui, "", s:kyotonight11_term, "", "")
 call s:hi("iCursor", s:kyotonight0_gui, s:kyotonight4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:kyotonight3_gui, "NONE", s:kyotonight3_term, "NONE", "", "")
 call s:hi("MatchParen", s:kyotonight8_gui, s:kyotonight3_gui, s:kyotonight8_term, s:kyotonight3_term, "", "")
 call s:hi("NonText", s:kyotonight2_gui, "", s:kyotonight3_term, "", "", "")
-call s:hi("Normal", s:kyotonight4_gui, s:kyotonight0_gui, "NONE", "NONE", "", "")
+call s:hi("Normal", s:kyotonight4_gui, s:kyotonight1_gui, "NONE", "NONE", "", "")
 call s:hi("Pmenu", s:kyotonight4_gui, s:kyotonight2_gui, "NONE", s:kyotonight1_term, "NONE", "")
 call s:hi("PmenuSbar", s:kyotonight4_gui, s:kyotonight2_gui, "NONE", s:kyotonight1_term, "", "")
 call s:hi("PmenuSel", s:kyotonight8_gui, s:kyotonight3_gui, s:kyotonight8_term, s:kyotonight3_term, "", "")
 call s:hi("PmenuThumb", s:kyotonight8_gui, s:kyotonight3_gui, "NONE", s:kyotonight3_term, "", "")
 call s:hi("SpecialKey", s:kyotonight3_gui, "", s:kyotonight3_term, "", "", "")
-call s:hi("SpellBad", s:kyotonight11_gui, s:kyotonight0_gui, s:kyotonight11_term, "NONE", "undercurl", s:kyotonight11_gui)
-call s:hi("SpellCap", s:kyotonight13_gui, s:kyotonight0_gui, s:kyotonight13_term, "NONE", "undercurl", s:kyotonight13_gui)
-call s:hi("SpellLocal", s:kyotonight5_gui, s:kyotonight0_gui, s:kyotonight5_term, "NONE", "undercurl", s:kyotonight5_gui)
-call s:hi("SpellRare", s:kyotonight6_gui, s:kyotonight0_gui, s:kyotonight6_term, "NONE", "undercurl", s:kyotonight6_gui)
-call s:hi("Visual", "", s:kyotonight2_gui, "", s:kyotonight1_term, "", "")
-call s:hi("VisualNOS", "", s:kyotonight2_gui, "", s:kyotonight1_term, "", "")
+call s:hi("SpellBad", s:kyotonight11_gui, s:kyotonight1_gui, s:kyotonight11_term, "NONE", "undercurl", s:kyotonight11_gui)
+call s:hi("SpellCap", s:kyotonight13_gui, s:kyotonight1_gui, s:kyotonight13_term, "NONE", "undercurl", s:kyotonight13_gui)
+call s:hi("SpellLocal", s:kyotonight5_gui, s:kyotonight1_gui, s:kyotonight5_term, "NONE", "undercurl", s:kyotonight5_gui)
+call s:hi("SpellRare", s:kyotonight6_gui, s:kyotonight1_gui, s:kyotonight6_term, "NONE", "undercurl", s:kyotonight6_gui)
+call s:hi("Visual", "", s:kyotonight3_gui, "", s:kyotonight1_term, "", "")
+call s:hi("VisualNOS", "", s:kyotonight3_gui, "", s:kyotonight1_term, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
@@ -199,11 +175,11 @@ call s:hi("CursorColumn", "", s:kyotonight1_gui, "NONE", s:kyotonight1_term, "",
 if g:kyotonight_cursor_line_number_background == 0
   call s:hi("CursorLineNr", s:kyotonight4_gui, "", "NONE", "", "NONE", "")
 else
-  call s:hi("CursorLineNr", s:kyotonight4_gui, s:kyotonight1_gui, "NONE", s:kyotonight1_term, "NONE", "")
+  call s:hi("CursorLineNr", s:kyotonight4_gui, s:kyotonight0_gui, "NONE", s:kyotonight1_term, "NONE", "")
 endif
 call s:hi("Folded", s:kyotonight3_gui, s:kyotonight1_gui, s:kyotonight3_term, s:kyotonight1_term, s:bold, "")
-call s:hi("FoldColumn", s:kyotonight3_gui, s:kyotonight0_gui, s:kyotonight3_term, "NONE", "", "")
-call s:hi("SignColumn", s:kyotonight1_gui, s:kyotonight0_gui, s:kyotonight1_term, "NONE", "", "")
+call s:hi("FoldColumn", s:kyotonight3_gui, s:kyotonight1_gui, s:kyotonight3_term, "NONE", "", "")
+call s:hi("SignColumn", s:kyotonight1_gui, s:kyotonight1_gui, s:kyotonight1_term, "NONE", "", "")
 
 "+--- Navigation ---+
 call s:hi("Directory", s:kyotonight8_gui, "", s:kyotonight8_term, "NONE", "", "")
@@ -225,7 +201,7 @@ else
   call s:hi("StatusLineTerm", s:kyotonight8_gui, s:kyotonight3_gui, s:kyotonight8_term, s:kyotonight3_term, "NONE", "")
   call s:hi("StatusLineTermNC", s:kyotonight4_gui, s:kyotonight3_gui, "NONE", s:kyotonight3_term, "NONE", "")
 endif
-call s:hi("WarningMsg", s:kyotonight0_gui, s:kyotonight13_gui, s:kyotonight1_term, s:kyotonight13_term, "", "")
+call s:hi("WarningMsg", s:kyotonight1_gui, s:kyotonight13_gui, s:kyotonight1_term, s:kyotonight13_term, "", "")
 call s:hi("WildMenu", s:kyotonight8_gui, s:kyotonight1_gui, s:kyotonight8_term, s:kyotonight1_term, "", "")
 
 "+--- Search ---+
@@ -234,16 +210,16 @@ call s:hi("Search", s:kyotonight1_gui, s:kyotonight8_gui, s:kyotonight1_term, s:
 
 "+--- Tabs ---+
 call s:hi("TabLine", s:kyotonight4_gui, s:kyotonight1_gui, "NONE", s:kyotonight1_term, "NONE", "")
-call s:hi("TabLineFill", s:kyotonight4_gui, s:kyotonight1_gui, "NONE", s:kyotonight1_term, "NONE", "")
+call s:hi("TabLineFill", s:kyotonight3_gui, s:kyotonight0_gui, "NONE", s:kyotonight1_term, "NONE", "")
 call s:hi("TabLineSel", s:kyotonight8_gui, s:kyotonight3_gui, s:kyotonight8_term, s:kyotonight3_term, "NONE", "")
 
 "+--- Window ---+
 call s:hi("Title", s:kyotonight4_gui, "", "NONE", "", "NONE", "")
 
 if g:kyotonight_bold_vertical_split_line == 0
-  call s:hi("VertSplit", s:kyotonight2_gui, s:kyotonight0_gui, s:kyotonight3_term, "NONE", "NONE", "")
+  call s:hi("VertSplit", s:kyotonight3_gui, s:kyotonight1_gui, s:kyotonight3_term, "NONE", "NONE", "")
 else
-  call s:hi("VertSplit", s:kyotonight2_gui, s:kyotonight1_gui, s:kyotonight3_term, s:kyotonight1_term, "NONE", "")
+  call s:hi("VertSplit", s:kyotonight0_gui, s:kyotonight0_gui, s:kyotonight3_term, s:kyotonight1_term, "NONE", "")
 endif
 
 "+----------------------+
@@ -662,6 +638,13 @@ hi! link StartifyBracket Delimiter
 hi! link StartifySlash Normal
 hi! link StartifySpecial Comment
 
+" dashboard-nvim
+" > glepnir/dashboard-nvim
+call s:hi("DashboardHeader", s:kyotonight8_gui, "", s:kyotonight8_term, "", "", "")
+call s:hi("DashboardCenter", s:kyotonight6_gui, "", s:kyotonight6_term, "", "", "")
+call s:hi("DashboardFooter", s:kyotonight13_gui, "", s:kyotonight13_term, "", s:italic, "")
+call s:hi("DashboardShortCut", s:kyotonight7_gui, "", s:kyotonight7_term, "", "", "")
+
 "+--- Languages ---+
 " Haskell
 " > neovimhaskell/haskell-vim
@@ -832,3 +815,4 @@ function! KyotonightPalette() abort
   let ret["kyotonight3_bright"] = s:kyotonight3_gui_bright
   return ret
 endfunction
+
