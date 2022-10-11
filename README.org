@@ -4,11 +4,11 @@ Vim / NeoVim theme that is a marriage of Tokyo Night and Nord Theme. And they we
 
 ** Screenshots
 
-[[https://i.imgur.com/ZB66ksL.png]]
+[[https://imgur.com/UllE1x2.png]]
 
-[[https://imgur.com/aFKkiwj.png]]
+[[https://imgur.com/5q4duDz.png]]
 
-[[https://imgur.com/6KYyHzH.png]]
+[[https://imgur.com/OoyKKaF.png]]
 
 *** Plugins visible in screenshots
 - [[https://github.com/nvim-lualine/lualine.nvim][nvim-lualine/lualine.nvim]] with [[https://github.com/folke/tokyonight.nvim][folke/tokyonight.nvim]] theme
@@ -18,8 +18,9 @@ Vim / NeoVim theme that is a marriage of Tokyo Night and Nord Theme. And they we
 
 ** Why another Tokyo Night VIM theme...
 
-I'm aware that there already is a [[https://github.com/folke/tokyonight.nvim][Tokyo Night Vim theme]], but I find it a little too flashy.
+I'm aware that there already is a [[https://github.com/folke/tokyonight.nvim][Tokyo Night NeoVim theme]], but I find it a little too flashy.
 So, I decided to make my own, that would be closer to Enki's Sublime Theme, and easier for the eyes.
+Added bonus is that this theme works in NeoVim as well as in regular Vim.
 
 ** About
 
@@ -30,13 +31,13 @@ The theme's code is based on [[https://github.com/arcticicestudio/nord-vim][Nord
 
 *** Vim-plug
 
-#+begin_src VimScript
+#+begin_src vim
 Plug 'laniusone/kyotonight'
 #+end_src
 
 *** Packer
 
-#+begin_src Lua
+#+begin_src lua
 use 'laniusone/kyotonight'
 #+end_src
 
@@ -47,7 +48,7 @@ Make sure these are configured before calling `colorscheme kyotonight`.
 
 *** VimScript
 
-#+begin_src VimScript
+#+begin_src vim
 let g:kyotonight_bold = 1
 let g:kyotonight_underline = 1
 let g:kyotonight_italic = 0
@@ -62,7 +63,7 @@ colorscheme kyotonight
 
 *** Lua
 
-#+begin_src Lua
+#+begin_src lua
 local g = vim.g
 
 g.kyotonight_bold = 1
@@ -79,13 +80,37 @@ vim.cmd[[colorscheme kyotonight]]
 
 ** Supported plugins
 
-- [x] Everything that [[https://github.com/arcticicestudio/nord-vim][Nord Theme]] supports 
 - [x] [[https://github.com/glepnir/dashboard-nvim][glepnir/dashboard-nvim]]
 - [x] [[https://github.com/romgrk/barbar.nvim][romgrk/barbar.nvim]]
 - [x] [[https://github.com/nvim-tree/nvim-tree.lua][nvim-tree/nvim-tree.lua]]
+- [x] [[https://github.com/w0rp/ale][w0rp/ale]]
+- [x] [[https://github.com/neoclide/coc.vim][neoclide/coc.vim]]
+- [x] [[https://github.com/nvim-treesitter/nvim-treesitter][nvim-treesitter/nvim-treesitter]]
+- [x] [[https://github.com/neovim/nvim-lspconfig][neovim/nvim-lspconfig]]
+- [x] [[https://github.com/lewis6991/gitsigns.nvim][lewis6991/gitsigns.nvim]]
+- [x] [[https://github.com/airblade/vim-gitgutter][airblade/vim-gitgutter]]
+- [x] [[https://github.com/mhinz/vim-signify][mhinz/vim-signify]]
+- [x] [[https://github.com/justinmk/vim-sneak][justinmk/vim-sneak]]
+- [x] [[https://github.com/tpope/vim-fugitive][tpope/vim-fugitive]]
+- [x] [[https://github.com/davidhalter/jedi-vim][davidhalter/jedi-vim]]
+- [x] [[https://github.com/scrooloose/nerdtree][scrooloose/nerdtree]]
+- [x] [[https://github.com/ctrlpvim/ctrlp.vim][ctrlpvim/ctrlp.vim]]
+- [x] [[https://github.com/liuchengxu/vim-clap][liuchengxu/vim-clap]]
+- [x] [[https://github.com/nathanaelkane/vim-indent-guides][nathanaelkane/vim-indent-guides]]
+- [x] [[https://github.com/junegunn/vim-plug][junegunn/vim-plug]]
+- [x] [[https://github.com/kshenoy/vim-signature][kshenoy/vim-signature]]
+- [x] [[https://github.com/mhinz/vim-startify][mhinz/vim-startify]]
+- [x] [[https://github.com/vimwiki/vimwiki][vimwiki/vimwiki]]
+- [x] [[https://github.com/neovimhaskell/haskell-vim][neovimhaskell/haskell-vim]]
+- [x] [[https://github.com/pangloss/vim-javascript][pangloss/vim-javascript]]
+- [x] [[https://github.com/vim-pandoc/vim-pandoc-syntax][vim-pandoc/vim-pandoc-syntax]]
+- [x] [[https://github.com/HerringtonDarkholme/yats.vim][HerringtonDarkholme/yats.vim]]
+- [x] [[https://github.com/plasticboy/vim-markdown][plasticboy/vim-markdown]]
+- [x] [[https://github.com/StanAngeloff/php.vim][StanAngeloff/php.vim]]
+- [x] [[https://github.com/stephpy/vim-yaml][stephpy/vim-yaml]]
 
 ** Ackowledgements
 
 - [[https://github.com/enkia][Enki]] for wonderful Tokyo Night theme
-- [[https://github.com/folke][Folke]] for bringing it into Vim
-- [[https://github.com/arcticicestudio][ArcticIceStudio]] for Nord Theme for Vim, on which code this theme is based on
+- [[https://github.com/folke][Folke]] for bringing it to NeoVim
+- [[https://github.com/arcticicestudio][ArcticIceStudio]] for Nord Theme for Vim, on which code of this theme is based on

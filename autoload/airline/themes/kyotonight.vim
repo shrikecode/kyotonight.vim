@@ -4,7 +4,7 @@
 " Repository: https://github.com/laniusone/kyotonight.vim
 " License: MIT
 
-let s:kyotonight_vim_version="0.0.1"
+let s:kyotonight_vim_version="0.0.2"
 let g:airline#themes#kyotonight#palette = {}
 
 let s:kn_blackest_gui  = "#0f0f14"

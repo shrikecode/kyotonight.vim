@@ -12,7 +12,7 @@ if version > 580
 endif
 
 let g:colors_name = "kyotonight"
-let s:kyotonight_vim_version="0.0.1"
+let s:kyotonight_vim_version="0.0.2"
 set background=dark
 
 let s:kn_blackest_gui    = "#0f0f14"
