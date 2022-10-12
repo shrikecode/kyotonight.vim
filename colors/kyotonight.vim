@@ -1,4 +1,4 @@
-" Copyright (C) 2022-present Wojciech M. Wnuk <laniusone@pm.me>
+n" Copyright (C) 2022-present Wojciech M. Wnuk <laniusone@pm.me>
 
 " Project: Kyoto Night Vim
 " Repository: https://github.com/laniusone/kyotonight.vim
@@ -523,7 +523,7 @@ call s:hi("ALEWarning" , s:kn_yellow_gui, "", s:kn_yellow_term, "", "undercurl",
 call s:hi("ALEError" , s:kn_red_gui, "", s:kn_red_term, "", "undercurl", "")
 
 " Coc
-" > neoclide/coc.vim
+" > neoclide/coc.nvim
 call s:hi("CocWarningHighlight" , s:kn_yellow_gui, "", s:kn_yellow_term, "", "undercurl", "")
 call s:hi("CocErrorHighlight" , s:kn_red_gui, "", s:kn_red_term, "", "undercurl", "")
 call s:hi("CocInfoHighlight" , s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "undercurl", "")
