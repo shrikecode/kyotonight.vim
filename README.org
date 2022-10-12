@@ -1,6 +1,6 @@
 #+title: Kyoto Night NeoVim / Vim theme
 
-Vim / NeoVim theme that is a marriage of Tokyo Night and Nord Theme. And they went on honeymoon to Kyoto I guess.
+A dark, elegant, and easy on the eyes Neovim / Vim theme, based on Tokyo Night color palette, with support for bunch of plugins.
 
 ** Screenshots
 
@@ -19,13 +19,13 @@ Vim / NeoVim theme that is a marriage of Tokyo Night and Nord Theme. And they we
 ** Why another Tokyo Night VIM theme...
 
 I'm aware that there already is a [[https://github.com/folke/tokyonight.nvim][Tokyo Night NeoVim theme]], but I find it a little too flashy.
-So, I decided to make my own, that would be closer to Enki's Sublime Theme, and easier for the eyes.
+So, I decided to make my own, that would be closer to Enki's SublimeText Theme, and easier for the eyes.
 Added bonus is that this theme works in NeoVim as well as in regular Vim.
 
 ** About
 
 Colorscheme inspired by [[https://github.com/enkia/enki-theme][Enki Theme]] variant Tokyo Night, made using [[https://github.com/enkia/tokyo-night-vscode-theme#color-palette][Tokyo Night color pallette]].
-The theme's code is based on [[https://github.com/arcticicestudio/nord-vim][Nord Theme]] (because I suck at Lua and VimScript + Nord's tame color combinations is what I needed).
+The theme's code is based on [[https://github.com/arcticicestudio/nord-vim][Nord Theme]] (because I suck at Lua and VimScript + Nord's tame color combinations is what I needed, at least initally).
 
 ** Installation
 
@@ -108,6 +108,14 @@ vim.cmd[[colorscheme kyotonight]]
 - [x] [[https://github.com/plasticboy/vim-markdown][plasticboy/vim-markdown]]
 - [x] [[https://github.com/StanAngeloff/php.vim][StanAngeloff/php.vim]]
 - [x] [[https://github.com/stephpy/vim-yaml][stephpy/vim-yaml]]
+
+** Todos
+
+- [ ] Make code a little cleaner (create generic highlight groups and link them)
+- [ ] Re-implement public palette API
+- [ ] Make sidebar windows dark (as nvim tree)
+- [ ] Fix the looks of horizontal split line if sidebar is open
+- [ ] Create Lua API?
 
 ** Ackowledgements
 
