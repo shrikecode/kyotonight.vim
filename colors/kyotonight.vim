@@ -1,4 +1,4 @@
-n" Copyright (C) 2022-present Wojciech M. Wnuk <laniusone@pm.me>
+" Copyright (C) 2022-present Wojciech M. Wnuk <laniusone@pm.me>
 
 " Project: Kyoto Night Vim
 " Repository: https://github.com/laniusone/kyotonight.vim
