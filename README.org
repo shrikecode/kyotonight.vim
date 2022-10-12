@@ -116,6 +116,7 @@ vim.cmd[[colorscheme kyotonight]]
 - [ ] Make sidebar windows dark (as nvim tree)
 - [ ] Fix the looks of horizontal split line if sidebar is open
 - [ ] Create Lua API?
+- [ ] Contribute theme fixes / additional plugins support back to Nord? (not really related to this repo)
 
 ** Ackowledgements
 
