@@ -12,79 +12,67 @@ if version > 580
 endif
 
 let g:colors_name = "kyotonight"
-let s:kyotonight_vim_version="0.0.2"
+let s:kyotovim_version="0.1.0"
 set background=dark
 
-let s:kn_blackest_gui    = "#0f0f14"
-let s:kn_bg_gui          = "#1a1b26"
-let s:kn_blacklight_gui  = "#24283b"
-let s:kn_grey_gui        = "#414868"
-let s:kn_grey_gui_bright = "#565f89"
-let s:kn_fg_gui          = "#a9b1d6"
-let s:kn_greylight_gui   = "#cfc9c2"
-let s:kn_cyanlight_gui   = "#b4f9f8"
-let s:kn_teal_gui        = "#73daca"
-let s:kn_bluelight_gui   = "#7dcfff"
-let s:kn_blue_gui        = "#7aa2f7"
-let s:kn_cyan_gui        = "#2ac3de"
-let s:kn_red_gui         = "#f7768e"
-let s:kn_orange_gui      = "#ff9e64"
-let s:kn_yellow_gui      = "#e0af68"
-let s:kn_green_gui       = "#9ece6a"
-let s:kn_magenta_gui     = "#bb9af7"
+let s:none        = ["", ""]
+let s:hl          = ["#33467c", "7"]
+let s:black0      = ["#0f0f14", ""]
+let s:bg          = ["#1a1b26", "0"]
+let s:black1      = ["#24283b", "8"]
+let s:grey0       = ["#414868", "7"]
+let s:grey1       = ["#565f89", "15"]
+let s:fg          = ["#a9b1d6", ""]
+let s:cream       = ["#cfc9c2", "15"]
+let s:cyan1       = ["#b4f9f8", "14"]
+let s:teal        = ["#73daca", "6"]
+let s:blue1       = ["#7dcfff", "12"]
+let s:blue0       = ["#7aa2f7", "4"]
+let s:cyan0       = ["#2ac3de", "6"]
+let s:red         = ["#f7768e", "1"]
+let s:orange      = ["#ff9e64", "3"]
+let s:yellow      = ["#e0af68", "11"]
+let s:green       = ["#9ece6a", "2"]
+let s:magenta     = ["#bb9af7", "5"]
 
-let s:kn_bg_term = "0"
-let s:kn_grey_term = "8"
-let s:kn_greylight_term = "7"
-let s:kn_cyanlight_term = "15"
-let s:kn_teal_term = "14"
-let s:kn_bluelight_term = "6"
-let s:kn_blue_term = "4"
-let s:kn_cyan_term = "12"
-let s:kn_red_term = "1"
-let s:kn_orange_term = "11"
-let s:kn_yellow_term = "3"
-let s:kn_green_term = "2"
-let s:kn_magenta_term = "5"
+let g:kyotobold = get(g:, "kyotobold", 1)
+let s:bold = (g:kyotobold == 0) ? "" : "bold,"
 
-let g:kyotonight_bold = get(g:, "kyotonight_bold", 1)
-let s:bold = (g:kyotonight_bold == 0) ? "" : "bold,"
+let g:kyotounderline = get(g:, "kyotounderline", 1)
+let s:underline = (g:kyotounderline == 0) ? "NONE," : "underline,"
 
-let g:kyotonight_underline = get(g:, "kyotonight_underline", 1)
-let s:underline = (g:kyotonight_underline == 0) ? "NONE," : "underline,"
+let g:kyotoitalic = get(g:, "kyotoitalic", (has("gui_running") || $TERM_ITALICS == "true"))
+let s:italic = (g:kyotoitalic == 0) ? "" : "italic,"
 
-let g:kyotonight_italic = get(g:, "kyotonight_italic", (has("gui_running") || $TERM_ITALICS == "true"))
-let s:italic = (g:kyotonight_italic == 0) ? "" : "italic,"
+let g:kyotoitalic_comments = get(g:, "kyotoitalic_comments", 0)
+let s:italicize_comments = (g:kyotoitalic_comments == 0) ? "" : get(s:, "italic")
 
-let g:kyotonight_italic_comments = get(g:, "kyotonight_italic_comments", 0)
-let s:italicize_comments = (g:kyotonight_italic_comments == 0) ? "" : get(s:, "italic")
+let g:kyotouniform_status_lines = get(g:, "kyotouniform_status_lines", 0)
 
-let g:kyotonight_uniform_status_lines = get(g:, "kyotonight_uniform_status_lines", 0)
+let g:kyotobold_vertical_split_line = get(g:, "kyotobold_vertical_split_line", 0)
 
-let g:kyotonight_bold_vertical_split_line = get(g:, "kyotonight_bold_vertical_split_line", 0)
+let g:kyotocursor_line_number_background = get(g:, "kyotocursor_line_number_background", 0)
+let g:kyotouniform_diff_background = get(g:, "kyotouniform_diff_background", 0)
 
-let g:kyotonight_cursor_line_number_background = get(g:, "kyotonight_cursor_line_number_background", 0)
-let g:kyotonight_uniform_diff_background = get(g:, "kyotonight_uniform_diff_background", 0)
-
-function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
+function! s:hi(group, fg, bg, attr, guisp)
   let cmd = ""
-  if a:guifg != ""
-    let cmd = cmd . " guifg=" . a:guifg
+  if type(a:fg) == v:t_list && a:fg[0] != ""
+    let cmd = cmd . " guifg=" . a:fg[0]
   endif
-  if a:guibg != ""
-    let cmd = cmd . " guibg=" . a:guibg
+  if type(a:bg) == v:t_list && a:bg[0] != ""
+    let cmd = cmd . " guibg=" . a:bg[0]
   endif
-  if a:ctermfg != ""
-    let cmd = cmd . " ctermfg=" . a:ctermfg
+  if type(a:fg) == v:t_list && a:fg[1] != ""
+    let cmd = cmd . " ctermfg=" . a:fg[1]
   endif
-  if a:ctermbg != ""
-    let cmd = cmd . " ctermbg=" . a:ctermbg
+  if type(a:bg) == v:t_list && a:bg[1] != ""
+    let cmd = cmd . " ctermbg=" . a:bg[1]
   endif
   if a:attr != ""
     let cmd = cmd . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
   endif
-  if a:guisp != ""
-    let cmd = cmd . " guisp=" . a:guisp
+  if type(a:guisp) == v:t_list && a:guisp[0] != ""
+    let cmd = cmd . " guisp=" . a:guisp[0]
   endif
   if cmd != ""
     exec "hi " . a:group . cmd
@@ -95,172 +83,172 @@ endfunction
 "+ UI Components +
 "+---------------+
 "+--- Attributes ---+
-call s:hi("Bold", "", "", "", "", s:bold, "")
-call s:hi("Italic", "", "", "", "", s:italic, "")
-call s:hi("Underline", "", "", "", "", s:underline, "")
+call s:hi("Bold", "", "", s:bold, "")
+call s:hi("Italic", "", "", s:italic, "")
+call s:hi("Underline", "", "", s:underline, "")
 
 "+--- Editor ---+
-call s:hi("ColorColumn", "", s:kn_blacklight_gui, "NONE", s:kn_bg_term, "", "")
-call s:hi("Cursor", s:kn_bg_gui, s:kn_fg_gui, "", "NONE", "", "")
-call s:hi("CursorLine", "", s:kn_blackest_gui, "NONE", s:kn_bg_term, "NONE", "")
-call s:hi("Error", s:kn_bg_gui, s:kn_red_gui, "", s:kn_red_term, "", "")
-call s:hi("iCursor", s:kn_blackest_gui, s:kn_fg_gui, "", "NONE", "", "")
-call s:hi("LineNr", s:kn_grey_gui, "NONE", s:kn_grey_term, "NONE", "", "")
-call s:hi("MatchParen", s:kn_bluelight_gui, s:kn_grey_gui, s:kn_bluelight_term, s:kn_grey_term, "", "")
-call s:hi("NonText", s:kn_blacklight_gui, "", s:kn_grey_term, "", "", "")
-call s:hi("Normal", s:kn_fg_gui, s:kn_bg_gui, "NONE", "NONE", "", "")
-call s:hi("Pmenu", s:kn_fg_gui, s:kn_blacklight_gui, "NONE", s:kn_bg_term, "NONE", "")
-call s:hi("PmenuSbar", s:kn_fg_gui, s:kn_blacklight_gui, "NONE", s:kn_bg_term, "", "")
-call s:hi("PmenuSel", s:kn_bluelight_gui, s:kn_grey_gui, s:kn_bluelight_term, s:kn_grey_term, "", "")
-call s:hi("PmenuThumb", s:kn_bluelight_gui, s:kn_grey_gui, "NONE", s:kn_grey_term, "", "")
-call s:hi("SpecialKey", s:kn_grey_gui, "", s:kn_grey_term, "", "", "")
-call s:hi("SpellBad", s:kn_red_gui, s:kn_bg_gui, s:kn_red_term, "NONE", "undercurl", s:kn_red_gui)
-call s:hi("SpellCap", s:kn_orange_gui, s:kn_bg_gui, s:kn_orange_term, "NONE", "undercurl", s:kn_orange_gui)
-call s:hi("SpellLocal", s:kn_yellow_gui, s:kn_bg_gui, s:kn_yellow_term, "NONE", "undercurl", s:kn_yellow_gui)
-call s:hi("SpellRare", s:kn_cyanlight_gui, s:kn_bg_gui, s:kn_cyanlight_term, "NONE", "undercurl", s:kn_cyanlight_gui)
-call s:hi("Visual", "", s:kn_grey_gui, "", s:kn_bg_term, "", "")
-call s:hi("VisualNOS", "", s:kn_grey_gui, "", s:kn_bg_term, "", "")
+call s:hi("ColorColumn", "", s:black1, "", "")
+call s:hi("Cursor", s:bg, s:fg, "", "")
+call s:hi("CursorLine", "", s:black0, "NONE", "")
+call s:hi("Error", s:bg, s:red, "", "")
+call s:hi("iCursor", s:black0, s:fg, "", "")
+call s:hi("LineNr", s:grey0, "NONE", "", "")
+call s:hi("MatchParen", s:blue1, s:grey0, "", "")
+call s:hi("NonText", s:black1, "", "", "")
+call s:hi("Normal", s:fg, s:bg, "", "")
+call s:hi("Pmenu", s:fg, s:black1, "NONE", "")
+call s:hi("PmenuSbar", s:fg, s:black1, "", "")
+call s:hi("PmenuSel", s:blue1, s:grey0, "", "")
+call s:hi("PmenuThumb", s:blue1, s:grey0, "", "")
+call s:hi("SpecialKey", s:grey0, "", "", "")
+call s:hi("SpellBad", s:red, s:bg, "undercurl", s:red)
+call s:hi("SpellCap", s:orange, s:bg, "undercurl", s:orange)
+call s:hi("SpellLocal", s:yellow, s:bg, "undercurl", s:yellow)
+call s:hi("SpellRare", s:cyan1, s:bg, "undercurl", s:cyan1)
+call s:hi("Visual", "", s:hl, "", "")
+call s:hi("VisualNOS", "", s:hl, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
-  let g:terminal_ansi_colors = [s:kn_bg_gui, s:kn_red_gui, s:kn_green_gui, s:kn_yellow_gui, s:kn_blue_gui, s:kn_magenta_gui, s:kn_bluelight_gui, s:kn_greylight_gui, s:kn_grey_gui, s:kn_red_gui, s:kn_green_gui, s:kn_yellow_gui, s:kn_blue_gui, s:kn_magenta_gui, s:kn_teal_gui, s:kn_cyanlight_gui]
+  let g:terminal_ansi_colors = [s:bg[0], s:red[0], s:green[0], s:yellow[0], s:blue0[0], s:magenta[0], s:blue1[0], s:cream[0], s:grey0[0], s:red[0], s:green[0], s:yellow[0], s:blue0[0], s:magenta[0], s:teal[0], s:cyan1[0]]
 endif
 
 if has('nvim')
   "+- Neovim Terminal Colors -+
-  let g:terminal_color_0 = s:kn_bg_gui
-  let g:terminal_color_1 = s:kn_red_gui
-  let g:terminal_color_2 = s:kn_green_gui
-  let g:terminal_color_3 = s:kn_yellow_gui
-  let g:terminal_color_4 = s:kn_blue_gui
-  let g:terminal_color_5 = s:kn_magenta_gui
-  let g:terminal_color_6 = s:kn_bluelight_gui
-  let g:terminal_color_7 = s:kn_greylight_gui
-  let g:terminal_color_8 = s:kn_grey_gui
-  let g:terminal_color_9 = s:kn_red_gui
-  let g:terminal_color_10 = s:kn_green_gui
-  let g:terminal_color_11 = s:kn_yellow_gui
-  let g:terminal_color_12 = s:kn_blue_gui
-  let g:terminal_color_13 = s:kn_magenta_gui
-  let g:terminal_color_14 = s:kn_teal_gui
-  let g:terminal_color_15 = s:kn_cyanlight_gui
+  let g:terminal_color_0 = s:bg[0]
+  let g:terminal_color_1 = s:red[0]
+  let g:terminal_color_2 = s:green[0]
+  let g:terminal_color_3 = s:yellow[0]
+  let g:terminal_color_4 = s:blue0[0]
+  let g:terminal_color_5 = s:magenta[0]
+  let g:terminal_color_6 = s:blue1[0]
+  let g:terminal_color_7 = s:cream[0]
+  let g:terminal_color_8 = s:grey0[0]
+  let g:terminal_color_9 = s:red[0]
+  let g:terminal_color_10 = s:green[0]
+  let g:terminal_color_11 = s:yellow[0]
+  let g:terminal_color_12 = s:blue0[0]
+  let g:terminal_color_13 = s:magenta[0]
+  let g:terminal_color_14 = s:teal[0]
+  let g:terminal_color_15 = s:cyan1[0]
 
   "+- Neovim Support -+
-  call s:hi("healthError", s:kn_red_gui, s:kn_bg_gui, s:kn_red_term, s:kn_bg_term, "", "")
-  call s:hi("healthSuccess", s:kn_green_gui, s:kn_bg_gui, s:kn_green_term, s:kn_bg_term, "", "")
-  call s:hi("healthWarning", s:kn_yellow_gui, s:kn_bg_gui, s:kn_yellow_term, s:kn_bg_term, "", "")
-  call s:hi("TermCursorNC", "", s:kn_bg_gui, "", s:kn_bg_term, "", "")
+  call s:hi("healthError", s:red, s:bg, "", "")
+  call s:hi("healthSuccess", s:green, s:bg, "", "")
+  call s:hi("healthWarning", s:yellow, s:bg, "", "")
+  call s:hi("TermCursorNC", "", s:bg, "", "")
 
   "+- Neovim Diagnostics API -+
-  call s:hi("DiagnosticWarn", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-  call s:hi("DiagnosticError" , s:kn_red_gui, "", s:kn_red_term, "", "", "")
-  call s:hi("DiagnosticInfo" , s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-  call s:hi("DiagnosticHint" , s:kn_cyanlight_gui, "", s:kn_cyanlight_term, "", "", "")
-  call s:hi("DiagnosticSignWarn", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-  call s:hi("DiagnosticSignError" , s:kn_red_gui, "", s:kn_red_term, "", "", "")
-  call s:hi("DiagnosticSignInfo" , s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-  call s:hi("DiagnosticSignHint" , s:kn_cyanlight_gui, "", s:kn_cyanlight_term, "", "", "")
-  call s:hi("DiagnosticUnderlineWarn" , s:kn_yellow_gui, "", s:kn_yellow_term, "", "undercurl", "")
-  call s:hi("DiagnosticUnderlineError" , s:kn_red_gui, "", s:kn_red_term, "", "undercurl", "")
-  call s:hi("DiagnosticUnderlineInfo" , s:kn_blue_gui, "", s:kn_blue_term, "", "undercurl", "")
-  call s:hi("DiagnosticUnderlineHint" , s:kn_cyanlight_gui, "", s:kn_cyanlight_term, "", "undercurl", "")
+  call s:hi("DiagnosticWarn", s:yellow, "", "", "")
+  call s:hi("DiagnosticError", s:red, "", "", "")
+  call s:hi("DiagnosticInfo", s:blue0, "", "", "")
+  call s:hi("DiagnosticHint", s:cyan1, "", "", "")
+  call s:hi("DiagnosticSignWarn", s:yellow, "", "", "")
+  call s:hi("DiagnosticSignError", s:red, "", "", "")
+  call s:hi("DiagnosticSignInfo", s:blue0, "", "", "")
+  call s:hi("DiagnosticSignHint", s:cyan1, "", "", "")
+  call s:hi("DiagnosticUnderlineWarn", s:yellow, "", "undercurl", "")
+  call s:hi("DiagnosticUnderlineError", s:red, "", "undercurl", "")
+  call s:hi("DiagnosticUnderlineInfo", s:blue0, "", "undercurl", "")
+  call s:hi("DiagnosticUnderlineHint", s:cyan1, "", "undercurl", "")
 
   "+- Neovim DocumentHighlight -+
-  call s:hi("LspReferenceText", "", s:kn_grey_gui, "", s:kn_grey_term, "", "")
-  call s:hi("LspReferenceRead", "", s:kn_grey_gui, "", s:kn_grey_term, "", "")
-  call s:hi("LspReferenceWrite", "", s:kn_grey_gui, "", s:kn_grey_term, "", "")
+  call s:hi("LspReferenceText", "", s:grey0, "", "")
+  call s:hi("LspReferenceRead", "", s:grey0, "", "")
+  call s:hi("LspReferenceWrite", "", s:grey0, "", "")
 
   "+- Neovim LspSignatureHelp -+
-  call s:hi("LspSignatureActiveParameter", s:kn_blue_gui, "", s:kn_blue_term, "", s:underline, "")
+  call s:hi("LspSignatureActiveParameter", s:blue0, "", s:underline, "")
 endif
 
 "+--- Gutter ---+
-call s:hi("CursorColumn", "", s:kn_bg_gui, "NONE", s:kn_bg_term, "", "")
-if g:kyotonight_cursor_line_number_background == 0
-  call s:hi("CursorLineNr", s:kn_fg_gui, "", "NONE", "", "NONE", "")
+call s:hi("CursorColumn", "", s:bg, "", "")
+if g:kyotocursor_line_number_background == 0
+  call s:hi("CursorLineNr", s:fg, "", "NONE", "")
 else
-  call s:hi("CursorLineNr", s:kn_fg_gui, s:kn_blackest_gui, "NONE", s:kn_bg_term, "NONE", "")
+  call s:hi("CursorLineNr", s:fg, s:black0, "NONE", "")
 endif
-call s:hi("Folded", s:kn_grey_gui, s:kn_bg_gui, s:kn_grey_term, s:kn_bg_term, s:bold, "")
-call s:hi("FoldColumn", s:kn_grey_gui, s:kn_bg_gui, s:kn_grey_term, "NONE", "", "")
-call s:hi("SignColumn", s:kn_bg_gui, s:kn_bg_gui, s:kn_bg_term, "NONE", "", "")
+call s:hi("Folded", s:grey0, s:bg, s:bold, "")
+call s:hi("FoldColumn", s:grey0, s:bg, "", "")
+call s:hi("SignColumn", s:bg, s:bg, "", "")
 
 "+--- Navigation ---+
-call s:hi("Directory", s:kn_blue_gui, "", s:kn_blue_term, "NONE", "", "")
+call s:hi("Directory", s:blue0, "", "", "")
 
 "+--- Prompt/Status ---+
-call s:hi("EndOfBuffer", s:kn_bg_gui, "", s:kn_bg_term, "NONE", "", "")
-call s:hi("ErrorMsg", s:kn_bg_gui, s:kn_red_gui, "NONE", s:kn_red_term, "", "")
-call s:hi("ModeMsg", s:kn_fg_gui, "", "", "", "", "")
-call s:hi("MoreMsg", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("Question", s:kn_fg_gui, "", "NONE", "", "", "")
-if g:kyotonight_uniform_status_lines == 0
-  call s:hi("StatusLine", s:kn_blue_gui, s:kn_grey_gui, s:kn_blue_term, s:kn_grey_term, "NONE", "")
-  call s:hi("StatusLineNC", s:kn_fg_gui, s:kn_bg_gui, "NONE", s:kn_bg_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:kn_blue_gui, s:kn_grey_gui, s:kn_blue_term, s:kn_grey_term, "NONE", "")
-  call s:hi("StatusLineTermNC", s:kn_fg_gui, s:kn_bg_gui, "NONE", s:kn_bg_term, "NONE", "")
+call s:hi("EndOfBuffer", s:bg, "", "", "")
+call s:hi("ErrorMsg", s:bg, s:red, "", "")
+call s:hi("ModeMsg", s:fg, "", "", "")
+call s:hi("MoreMsg", s:blue0, "", "", "")
+call s:hi("Question", s:fg, "", "", "")
+if g:kyotouniform_status_lines == 0
+  call s:hi("StatusLine", s:blue0, s:grey0, "NONE", "")
+  call s:hi("StatusLineNC", s:fg, s:bg, "NONE", "")
+  call s:hi("StatusLineTerm", s:blue0, s:grey0, "NONE", "")
+  call s:hi("StatusLineTermNC", s:fg, s:bg, "NONE", "")
 else
-  call s:hi("StatusLine", s:kn_blue_gui, s:kn_grey_gui, s:kn_blue_term, s:kn_grey_term, "NONE", "")
-  call s:hi("StatusLineNC", s:kn_fg_gui, s:kn_grey_gui, "NONE", s:kn_grey_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:kn_blue_gui, s:kn_grey_gui, s:kn_blue_term, s:kn_grey_term, "NONE", "")
-  call s:hi("StatusLineTermNC", s:kn_fg_gui, s:kn_grey_gui, "NONE", s:kn_grey_term, "NONE", "")
+  call s:hi("StatusLine", s:blue0, s:grey0, "NONE", "")
+  call s:hi("StatusLineNC", s:fg, s:grey0, "NONE", "")
+  call s:hi("StatusLineTerm", s:blue0, s:grey0, "NONE", "")
+  call s:hi("StatusLineTermNC", s:fg, s:grey0, "NONE", "")
 endif
-call s:hi("WarningMsg", s:kn_bg_gui, s:kn_yellow_gui, s:kn_bg_term, s:kn_yellow_term, "", "")
-call s:hi("WildMenu", s:kn_blue_gui, s:kn_bg_gui, s:kn_blue_term, s:kn_bg_term, "", "")
+call s:hi("WarningMsg", s:bg, s:yellow, "", "")
+call s:hi("WildMenu", s:blue0, s:bg, "", "")
 
 "+--- Search ---+
-call s:hi("IncSearch", s:kn_cyanlight_gui, s:kn_blue_gui, s:kn_cyanlight_term, s:kn_blue_term, s:underline, "")
-call s:hi("Search", s:kn_bg_gui, s:kn_blue_gui, s:kn_bg_term, s:kn_blue_term, "NONE", "")
+call s:hi("IncSearch", s:cyan1, s:blue0, s:underline, "")
+call s:hi("Search", s:bg, s:blue0, "NONE", "")
 
 "+--- Tabs ---+
-call s:hi("TabLine", s:kn_fg_gui, s:kn_bg_gui, "NONE", s:kn_bg_term, "NONE", "")
-call s:hi("TabLineFill", s:kn_grey_gui, s:kn_blackest_gui, "NONE", s:kn_bg_term, "NONE", "")
-call s:hi("TabLineSel", s:kn_grey_gui, s:kn_bg_gui, s:kn_bluelight_term, s:kn_grey_term, "NONE", "")
+call s:hi("TabLine", s:fg, s:bg, "NONE", "")
+call s:hi("TabLineFill", s:grey0, s:black0, "NONE", "")
+call s:hi("TabLineSel", s:grey0, s:bg, "NONE", "")
 
 "+--- Window ---+
-call s:hi("Title", s:kn_fg_gui, "", "NONE", "", "NONE", "")
+call s:hi("Title", s:fg, "", "NONE", "")
 
-if g:kyotonight_bold_vertical_split_line == 0
-  call s:hi("VertSplit", s:kn_grey_gui, s:kn_bg_gui, s:kn_grey_term, "NONE", "NONE", "")
+if g:kyotobold_vertical_split_line == 0
+  call s:hi("VertSplit", s:grey0, s:bg, "NONE", "")
 else
-  call s:hi("VertSplit", s:kn_blackest_gui, s:kn_blackest_gui, s:kn_grey_term, s:kn_grey_term, "NONE", "")
+  call s:hi("VertSplit", s:black0, s:black0, "NONE", "")
 endif
 
 "+----------------------+
 "+ Language Base Groups +
 "+----------------------+
-call s:hi("Boolean", s:kn_orange_gui, "", s:kn_orange_term, "", "", "")
-call s:hi("Character", s:kn_green_gui, "", s:kn_green_term, "", "", "")
-call s:hi("Comment", s:kn_grey_gui_bright, "", s:kn_grey_term, "", s:italicize_comments, "")
-call s:hi("Conceal", "", "NONE", "", "NONE", "", "")
-call s:hi("Conditional", s:kn_magenta_gui, "", s:kn_magenta_term, "", "", "")
-call s:hi("Constant", s:kn_greylight_gui, "", s:kn_greylight_term, "", s:italic, "")
-call s:hi("Decorator", s:kn_orange_gui, "", s:kn_orange_term, "", "", "")
-call s:hi("Define", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("Delimiter", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("Exception", s:kn_magenta_gui, "", s:kn_magenta_term, "", "", "") 
-call s:hi("Float", s:kn_orange_gui, "", s:kn_orange_term, "", "", "")
-call s:hi("Function", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("Identifier", s:kn_blue_gui, "", s:kn_blue_term, "", s:italic, "")
-call s:hi("Variable", s:kn_fg_gui, "", "NONE", "", "", "")
-call s:hi("Include", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "") 
-call s:hi("Keyword", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("Label", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("Number", s:kn_orange_gui, "", s:kn_orange_term, "", "", "")
-call s:hi("Operator", s:kn_magenta_gui, "", s:kn_magenta_term, "", "NONE", "")
-call s:hi("PreProc", s:kn_blue_gui, "", s:kn_blue_term, "", "NONE", "")
-call s:hi("Repeat", s:kn_magenta_gui, "", s:kn_magenta_term, "", "", "")
-call s:hi("Special", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("SpecialChar", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-call s:hi("SpecialComment", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", s:italicize_comments, "")
-call s:hi("Statement", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("StorageClass", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("String", s:kn_green_gui, "", s:kn_green_term, "", "", "")
-call s:hi("Structure", s:kn_magenta_gui, "", s:kn_magenta_term, "", "", "") 
-call s:hi("Tag", s:kn_fg_gui, "", "", "", "", "")
-call s:hi("Todo", s:kn_yellow_gui, "NONE", s:kn_yellow_term, "NONE", "", "")
-call s:hi("Type", s:kn_teal_gui, "", s:kn_teal_term, "", "NONE", "")
-call s:hi("Typedef", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("Boolean", s:orange, "", "", "")
+call s:hi("Character", s:green, "", "", "")
+call s:hi("Comment", s:grey1, "", s:italicize_comments, "")
+call s:hi("Conceal", "", "NONE", "", "")
+call s:hi("Conditional", s:magenta, "", "", "")
+call s:hi("Constant", s:cream, "", s:italic, "")
+call s:hi("Decorator", s:orange, "", "", "")
+call s:hi("Define", s:blue0, "", "", "")
+call s:hi("Delimiter", s:blue0, "", "", "")
+call s:hi("Exception", s:magenta, "", "", "") 
+call s:hi("Float", s:orange, "", "", "")
+call s:hi("Function", s:blue1, "", "", "")
+call s:hi("Identifier", s:blue0, "", s:italic, "")
+call s:hi("Variable", s:fg, "", "", "")
+call s:hi("Include", s:blue1, "", "", "") 
+call s:hi("Keyword", s:blue0, "", "", "")
+call s:hi("Label", s:blue0, "", "", "")
+call s:hi("Number", s:orange, "", "", "")
+call s:hi("Operator", s:magenta, "", "NONE", "")
+call s:hi("PreProc", s:blue0, "", "NONE", "")
+call s:hi("Repeat", s:magenta, "", "", "")
+call s:hi("Special", s:blue0, "", "", "")
+call s:hi("SpecialChar", s:yellow, "", "", "")
+call s:hi("SpecialComment", s:blue1, "", s:italicize_comments, "")
+call s:hi("Statement", s:blue0, "", "", "")
+call s:hi("StorageClass", s:blue0, "", "", "")
+call s:hi("String", s:green, "", "", "")
+call s:hi("Structure", s:magenta, "", "", "") 
+call s:hi("Tag", s:fg, "", "", "")
+call s:hi("Todo", s:yellow, "NONE", "", "")
+call s:hi("Type", s:teal, "", "NONE", "")
+call s:hi("Typedef", s:teal, "", "", "")
 hi! link Annotation Decorator
 hi! link Macro Define
 hi! link PreCondit PreProc
@@ -268,16 +256,16 @@ hi! link PreCondit PreProc
 "+-----------+
 "+ Languages +
 "+-----------+
-call s:hi("asciidocAttributeEntry", s:kn_cyan_gui, "", s:kn_cyan_term, "", "", "")
-call s:hi("asciidocAttributeList", s:kn_cyan_gui, "", s:kn_cyan_term, "", "", "")
-call s:hi("asciidocAttributeRef", s:kn_cyan_gui, "", s:kn_cyan_term, "", "", "")
-call s:hi("asciidocHLabel", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("asciidocListingBlock", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("asciidocMacroAttributes", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("asciidocOneLineTitle", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("asciidocPassthroughBlock", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("asciidocQuotedMonospaced", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("asciidocTriplePlusPassthrough", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("asciidocAttributeEntry", s:cyan0, "", "", "")
+call s:hi("asciidocAttributeList", s:cyan0, "", "", "")
+call s:hi("asciidocAttributeRef", s:cyan0, "", "", "")
+call s:hi("asciidocHLabel", s:blue0, "", "", "")
+call s:hi("asciidocListingBlock", s:teal, "", "", "")
+call s:hi("asciidocMacroAttributes", s:blue1, "", "", "")
+call s:hi("asciidocOneLineTitle", s:blue1, "", "", "")
+call s:hi("asciidocPassthroughBlock", s:blue0, "", "", "")
+call s:hi("asciidocQuotedMonospaced", s:teal, "", "", "")
+call s:hi("asciidocTriplePlusPassthrough", s:teal, "", "", "")
 hi! link asciidocAdmonition Keyword
 hi! link asciidocAttributeRef markdownH1
 hi! link asciidocBackslash Keyword
@@ -289,8 +277,8 @@ hi! link asciidocQuotedUnconstrainedBold asciidocQuotedBold
 hi! link asciidocQuotedUnconstrainedEmphasized asciidocQuotedEmphasized
 hi! link asciidocURL markdownLinkText
 
-call s:hi("awkCharClass", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("awkPatterns", s:kn_blue_gui, "", s:kn_blue_term, "", s:bold, "")
+call s:hi("awkCharClass", s:teal, "", "", "")
+call s:hi("awkPatterns", s:blue0, "", s:bold, "")
 hi! link awkArrayElement Identifier
 hi! link awkBoolLogic Keyword
 hi! link awkBrktRegExp SpecialChar
@@ -306,21 +294,21 @@ hi! link awkSpecialCharacter SpecialChar
 hi! link awkSpecialPrintf SpecialChar
 hi! link awkVariables Identifier
 
-call s:hi("cIncluded", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("cIncluded", s:teal, "", "", "")
 hi! link cOperator Operator
 hi! link cPreCondit PreCondit
 hi! link cConstant Type
 
-call s:hi("cmakeGeneratorExpression", s:kn_cyan_gui, "", s:kn_cyan_term, "", "", "")
+call s:hi("cmakeGeneratorExpression", s:cyan0, "", "", "")
 
 hi! link csPreCondit PreCondit
 hi! link csType Type
 hi! link csXmlTag SpecialComment
 
-call s:hi("cssAttributeSelector", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("cssDefinition", s:kn_teal_gui, "", s:kn_teal_term, "", "NONE", "")
-call s:hi("cssIdentifier", s:kn_teal_gui, "", s:kn_teal_term, "", s:underline, "")
-call s:hi("cssStringQ", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("cssAttributeSelector", s:teal, "", "", "")
+call s:hi("cssDefinition", s:teal, "", "NONE", "")
+call s:hi("cssIdentifier", s:teal, "", s:underline, "")
+call s:hi("cssStringQ", s:teal, "", "", "")
 hi! link cssAttr Keyword
 hi! link cssBraces Delimiter
 hi! link cssClassName cssDefinition
@@ -330,44 +318,44 @@ hi! link cssPseudoClass cssDefinition
 hi! link cssPseudoClassId cssPseudoClass
 hi! link cssVendor Keyword
 
-call s:hi("dosiniHeader", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
+call s:hi("dosiniHeader", s:blue1, "", "", "")
 hi! link dosiniLabel Type
 
-call s:hi("dtBooleanKey", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("dtExecKey", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("dtLocaleKey", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("dtNumericKey", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("dtTypeKey", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("dtBooleanKey", s:teal, "", "", "")
+call s:hi("dtExecKey", s:teal, "", "", "")
+call s:hi("dtLocaleKey", s:teal, "", "", "")
+call s:hi("dtNumericKey", s:teal, "", "", "")
+call s:hi("dtTypeKey", s:teal, "", "", "")
 hi! link dtDelim Delimiter
 hi! link dtLocaleValue Keyword
 hi! link dtTypeValue Keyword
 
-if g:kyotonight_uniform_diff_background == 0
-  call s:hi("DiffAdd", s:kn_green_gui, s:kn_blackest_gui, s:kn_green_term, "NONE", "inverse", "")
-  call s:hi("DiffChange", s:kn_yellow_gui, s:kn_blackest_gui, s:kn_yellow_term, "NONE", "inverse", "")
-  call s:hi("DiffDelete", s:kn_red_gui, s:kn_blackest_gui, s:kn_red_term, "NONE", "inverse", "")
-  call s:hi("DiffText", s:kn_blue_gui, s:kn_blackest_gui, s:kn_blue_term, "NONE", "inverse", "")
+if g:kyotouniform_diff_background == 0
+  call s:hi("DiffAdd", s:green, s:black0, "inverse", "")
+  call s:hi("DiffChange", s:yellow, s:black0, "inverse", "")
+  call s:hi("DiffDelete", s:red, s:black0, "inverse", "")
+  call s:hi("DiffText", s:blue0, s:black0, "inverse", "")
 else
-  call s:hi("DiffAdd", s:kn_green_gui, s:kn_bg_gui, s:kn_green_term, s:kn_bg_term, "", "")
-  call s:hi("DiffChange", s:kn_yellow_gui, s:kn_bg_gui, s:kn_yellow_term, s:kn_bg_term, "", "")
-  call s:hi("DiffDelete", s:kn_red_gui, s:kn_bg_gui, s:kn_red_term, s:kn_bg_term, "", "")
-  call s:hi("DiffText", s:kn_blue_gui, s:kn_bg_gui, s:kn_blue_term, s:kn_bg_term, "", "")
+  call s:hi("DiffAdd", s:green, s:bg, "", "")
+  call s:hi("DiffChange", s:yellow, s:bg, "", "")
+  call s:hi("DiffDelete", s:red, s:bg, "", "")
+  call s:hi("DiffText", s:blue0, s:bg, "", "")
 endif
 " Legacy groups for official git.vim and diff.vim syntax
 hi! link diffAdded DiffAdd
 hi! link diffChanged DiffChange
 hi! link diffRemoved DiffDelete
 
-call s:hi("gitconfigVariable", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("gitconfigVariable", s:teal, "", "", "")
 
-call s:hi("goBuiltins", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("goBuiltins", s:teal, "", "", "")
 hi! link goConstants Keyword
 
-call s:hi("helpBar", s:kn_grey_gui, "", s:kn_grey_term, "", "", "")
-call s:hi("helpHyperTextJump", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", s:underline, "")
+call s:hi("helpBar", s:grey0, "", "", "")
+call s:hi("helpHyperTextJump", s:blue1, "", s:underline, "")
 
-call s:hi("htmlArg", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("htmlLink", s:kn_fg_gui, "", "", "", "NONE", "NONE")
+call s:hi("htmlArg", s:teal, "", "", "")
+call s:hi("htmlLink", s:fg, "", "NONE", "NONE")
 hi! link htmlBold Bold
 hi! link htmlEndTag htmlTag
 hi! link htmlItalic Italic
@@ -381,15 +369,15 @@ hi! link htmlSpecialChar SpecialChar
 hi! link htmlTag Keyword
 hi! link htmlTagN htmlTag
 
-call s:hi("javaDocTags", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("javaDocTags", s:teal, "", "", "")
 hi! link javaCommentTitle Comment
 hi! link javaScriptBraces Delimiter
 hi! link javaScriptIdentifier Keyword
 hi! link javaScriptNumber Number
 
-call s:hi("jsonKeyword", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("jsonKeyword", s:teal, "", "", "")
 
-call s:hi("lessClass", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("lessClass", s:teal, "", "", "")
 hi! link lessAmpersand Keyword
 hi! link lessCssAttribute Delimiter
 hi! link lessFunction Function
@@ -403,15 +391,15 @@ hi! link lispFunc Function
 
 hi! link luaFunc Function
 
-call s:hi("markdownBlockquote", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("markdownCode", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("markdownCodeDelimiter", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("markdownFootnote", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("markdownId", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("markdownIdDeclaration", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("markdownH1", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("markdownLinkText", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("markdownUrl", s:kn_fg_gui, "", "NONE", "", "NONE", "")
+call s:hi("markdownBlockquote", s:teal, "", "", "")
+call s:hi("markdownCode", s:teal, "", "", "")
+call s:hi("markdownCodeDelimiter", s:teal, "", "", "")
+call s:hi("markdownFootnote", s:teal, "", "", "")
+call s:hi("markdownId", s:teal, "", "", "")
+call s:hi("markdownIdDeclaration", s:teal, "", "", "")
+call s:hi("markdownH1", s:blue1, "", "", "")
+call s:hi("markdownLinkText", s:blue1, "", "", "")
+call s:hi("markdownUrl", s:fg, "", "NONE", "")
 hi! link markdownBold Bold
 hi! link markdownBoldDelimiter Keyword
 hi! link markdownFootnoteDefinition markdownFootnote
@@ -429,22 +417,22 @@ hi! link markdownListMarker Keyword
 hi! link markdownRule Keyword
 hi! link markdownHeadingDelimiter Keyword
 
-call s:hi("perlPackageDecl", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("perlPackageDecl", s:teal, "", "", "")
 
-call s:hi("phpClasses", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("phpDocTags", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("phpClasses", s:teal, "", "", "")
+call s:hi("phpDocTags", s:teal, "", "", "")
 hi! link phpDocCustomTags phpDocTags
 hi! link phpMemberSelector Keyword
 
-call s:hi("podCmdText", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("podVerbatimLine", s:kn_fg_gui, "", "NONE", "", "", "")
+call s:hi("podCmdText", s:teal, "", "", "")
+call s:hi("podVerbatimLine", s:fg, "", "", "")
 hi! link podFormat Keyword
 
 hi! link pythonBuiltin Type
 hi! link pythonEscape SpecialChar
 
-call s:hi("rubyConstant", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("rubySymbol", s:kn_cyanlight_gui, "", s:kn_cyanlight_term, "", s:bold, "")
+call s:hi("rubyConstant", s:teal, "", "", "")
+call s:hi("rubySymbol", s:cyan1, "", s:bold, "")
 hi! link rubyAttribute Identifier
 hi! link rubyBlockParameterList Operator
 hi! link rubyInterpolationDelimiter Keyword
@@ -453,20 +441,20 @@ hi! link rubyLocalVariableOrMethod Function
 hi! link rubyPseudoVariable Keyword
 hi! link rubyRegexp SpecialChar
 
-call s:hi("rustAttribute", s:kn_cyan_gui, "", s:kn_cyan_term, "", "", "")
-call s:hi("rustEnum", s:kn_teal_gui, "", s:kn_teal_term, "", s:bold, "")
-call s:hi("rustMacro", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", s:bold, "")
-call s:hi("rustModPath", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("rustPanic", s:kn_blue_gui, "", s:kn_blue_term, "", s:bold, "")
-call s:hi("rustTrait", s:kn_teal_gui, "", s:kn_teal_term, "", s:italic, "")
+call s:hi("rustAttribute", s:cyan0, "", "", "")
+call s:hi("rustEnum", s:teal, "", s:bold, "")
+call s:hi("rustMacro", s:blue1, "", s:bold, "")
+call s:hi("rustModPath", s:teal, "", "", "")
+call s:hi("rustPanic", s:blue0, "", s:bold, "")
+call s:hi("rustTrait", s:teal, "", s:italic, "")
 hi! link rustCommentLineDoc Comment
 hi! link rustDerive rustAttribute
 hi! link rustEnumVariant rustEnum
 hi! link rustEscape SpecialChar
 hi! link rustQuestionMark Keyword
 
-call s:hi("sassClass", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("sassId", s:kn_teal_gui, "", s:kn_teal_term, "", s:underline, "")
+call s:hi("sassClass", s:teal, "", "", "")
+call s:hi("sassId", s:teal, "", s:underline, "")
 hi! link sassAmpersand Keyword
 hi! link sassClassChar Delimiter
 hi! link sassControl Keyword
@@ -489,16 +477,16 @@ hi! link shDerefVar Identifier
 hi! link sqlKeyword Keyword
 hi! link sqlSpecial Keyword
 
-call s:hi("vimAugroup", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("vimMapRhs", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("vimNotation", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("vimAugroup", s:teal, "", "", "")
+call s:hi("vimMapRhs", s:teal, "", "", "")
+call s:hi("vimNotation", s:teal, "", "", "")
 hi! link vimFunc Function
 hi! link vimFunction Function
 hi! link vimUserFunc Function
 
-call s:hi("xmlAttrib", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("xmlCdataStart", s:kn_grey_gui_bright, "", s:kn_grey_term, "", s:bold, "")
-call s:hi("xmlNamespace", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("xmlAttrib", s:teal, "", "", "")
+call s:hi("xmlCdataStart", s:grey1, "", s:bold, "")
+call s:hi("xmlNamespace", s:teal, "", "", "")
 hi! link xmlAttribPunct Delimiter
 hi! link xmlCdata Comment
 hi! link xmlCdataCdata xmlCdataStart
@@ -507,7 +495,7 @@ hi! link xmlEndTag xmlTagName
 hi! link xmlProcessingDelim Keyword
 hi! link xmlTagName Keyword
 
-call s:hi("yamlBlockMappingKey", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("yamlBlockMappingKey", s:teal, "", "", "")
 hi! link yamlBool Keyword
 hi! link yamlDocumentStart Keyword
 
@@ -517,37 +505,37 @@ hi! link yamlDocumentStart Keyword
 "+--- UI ---+
 " ALE
 " > w0rp/ale
-call s:hi("ALEWarningSign", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-call s:hi("ALEErrorSign" , s:kn_red_gui, "", s:kn_red_term, "", "", "")
-call s:hi("ALEWarning" , s:kn_yellow_gui, "", s:kn_yellow_term, "", "undercurl", "")
-call s:hi("ALEError" , s:kn_red_gui, "", s:kn_red_term, "", "undercurl", "")
+call s:hi("ALEWarningSign", s:yellow, "", "", "")
+call s:hi("ALEErrorSign", s:red, "", "", "")
+call s:hi("ALEWarning", s:yellow, "", "undercurl", "")
+call s:hi("ALEError", s:red, "", "undercurl", "")
 
 " Coc
 " > neoclide/coc.nvim
-call s:hi("CocWarningHighlight" , s:kn_yellow_gui, "", s:kn_yellow_term, "", "undercurl", "")
-call s:hi("CocErrorHighlight" , s:kn_red_gui, "", s:kn_red_term, "", "undercurl", "")
-call s:hi("CocInfoHighlight" , s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "undercurl", "")
-call s:hi("CocHintHighlight" , s:kn_blue_gui, "", s:kn_blue_term, "", "undercurl", "")
-call s:hi("CocWarningSign", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-call s:hi("CocErrorSign" , s:kn_red_gui, "", s:kn_red_term, "", "", "")
-call s:hi("CocInfoSign" , s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("CocHintSign" , s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("CocSearch" , s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("CocNotificationProgress" , s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
+call s:hi("CocWarningHighlight", s:yellow, "", "undercurl", "")
+call s:hi("CocErrorHighlight", s:red, "", "undercurl", "")
+call s:hi("CocInfoHighlight", s:blue1, "", "undercurl", "")
+call s:hi("CocHintHighlight", s:blue0, "", "undercurl", "")
+call s:hi("CocWarningSign", s:yellow, "", "", "")
+call s:hi("CocErrorSign", s:red, "", "", "")
+call s:hi("CocInfoSign", s:blue1, "", "", "")
+call s:hi("CocHintSign", s:blue0, "", "", "")
+call s:hi("CocSearch", s:blue1, "", "", "")
+call s:hi("CocNotificationProgress", s:blue1, "", "", "")
 
 if has('nvim')
   " Neovim LSP
   " > neovim/nvim-lspconfig
-  call s:hi("LspCodeLens", s:kn_grey_gui_bright, "", s:kn_grey_term, "", "", "")
+  call s:hi("LspCodeLens", s:grey1, "", "", "")
   if has("nvim-0.5")
-    call s:hi("LspDiagnosticsDefaultWarning", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-    call s:hi("LspDiagnosticsDefaultError" , s:kn_red_gui, "", s:kn_red_term, "", "", "")
-    call s:hi("LspDiagnosticsDefaultInformation" , s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-    call s:hi("LspDiagnosticsDefaultHint" , s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-    call s:hi("LspDiagnosticsUnderlineWarning" , s:kn_yellow_gui, "", s:kn_yellow_term, "", "undercurl", "")
-    call s:hi("LspDiagnosticsUnderlineError" , s:kn_red_gui, "", s:kn_red_term, "", "undercurl", "")
-    call s:hi("LspDiagnosticsUnderlineInformation" , s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "undercurl", "")
-    call s:hi("LspDiagnosticsUnderlineHint" , s:kn_blue_gui, "", s:kn_blue_term, "", "undercurl", "")
+    call s:hi("LspDiagnosticsDefaultWarning", s:yellow, "", "", "")
+    call s:hi("LspDiagnosticsDefaultError", s:red, "", "", "")
+    call s:hi("LspDiagnosticsDefaultInformation", s:blue1, "", "", "")
+    call s:hi("LspDiagnosticsDefaultHint", s:blue0, "", "", "")
+    call s:hi("LspDiagnosticsUnderlineWarning", s:yellow, "", "undercurl", "")
+    call s:hi("LspDiagnosticsUnderlineError", s:red, "", "undercurl", "")
+    call s:hi("LspDiagnosticsUnderlineInformation", s:blue1, "", "undercurl", "")
+    call s:hi("LspDiagnosticsUnderlineHint", s:blue0, "", "undercurl", "")
   endif
   
   " Gitsigns
@@ -557,17 +545,17 @@ endif
 
 " GitGutter
 " > airblade/vim-gitgutter
-call s:hi("GitGutterAdd", s:kn_green_gui, "", s:kn_green_term, "", "", "")
-call s:hi("GitGutterChange", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-call s:hi("GitGutterChangeDelete", s:kn_red_gui, "", s:kn_red_term, "", "", "")
-call s:hi("GitGutterDelete", s:kn_red_gui, "", s:kn_red_term, "", "", "")
+call s:hi("GitGutterAdd", s:green, "", "", "")
+call s:hi("GitGutterChange", s:yellow, "", "", "")
+call s:hi("GitGutterChangeDelete", s:red, "", "", "")
+call s:hi("GitGutterDelete", s:red, "", "", "")
 
 " Signify
 " > mhinz/vim-signify
-call s:hi("SignifySignAdd", s:kn_green_gui, "", s:kn_green_term, "", "", "")
-call s:hi("SignifySignChange", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-call s:hi("SignifySignChangeDelete", s:kn_red_gui, "", s:kn_red_term, "", "", "")
-call s:hi("SignifySignDelete", s:kn_red_gui, "", s:kn_red_term, "", "", "")
+call s:hi("SignifySignAdd", s:green, "", "", "")
+call s:hi("SignifySignChange", s:yellow, "", "", "")
+call s:hi("SignifySignChangeDelete", s:red, "", "", "")
+call s:hi("SignifySignDelete", s:red, "", "", "")
 
 " Sneak
 " > justinmk/vim-sneak
@@ -575,17 +563,17 @@ hi! link Sneak Search
 
 " fugitive.vim
 " > tpope/vim-fugitive
-call s:hi("gitcommitDiscardedFile", s:kn_red_gui, "", s:kn_red_term, "", "", "")
-call s:hi("gitcommitUntrackedFile", s:kn_red_gui, "", s:kn_red_term, "", "", "")
-call s:hi("gitcommitSelectedFile", s:kn_green_gui, "", s:kn_green_term, "", "", "")
+call s:hi("gitcommitDiscardedFile", s:red, "", "", "")
+call s:hi("gitcommitUntrackedFile", s:red, "", "", "")
+call s:hi("gitcommitSelectedFile", s:green, "", "", "")
 
 " davidhalter/jedi-vim
-call s:hi("jediFunction", s:kn_fg_gui, s:kn_grey_gui, "", s:kn_grey_term, "", "")
-call s:hi("jediFat", s:kn_bluelight_gui, s:kn_grey_gui, s:kn_bluelight_term, s:kn_grey_term, s:underline.s:bold, "")
+call s:hi("jediFunction", s:fg, s:grey0, "", "")
+call s:hi("jediFat", s:blue1, s:grey0, s:underline.s:bold, "")
 
 " NERDTree
 " > scrooloose/nerdtree
-call s:hi("NERDTreeExecFile", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("NERDTreeExecFile", s:teal, "", "", "")
 hi! link NERDTreeDirSlash Keyword
 hi! link NERDTreeHelp Comment
 
@@ -596,24 +584,24 @@ hi! link CtrlPBufferHid Normal
 
 " vim-clap
 " > liuchengxu/vim-clap
-call s:hi("ClapDir", s:kn_fg_gui, "", "", "", "", "")
-call s:hi("ClapDisplay", s:kn_fg_gui, s:kn_bg_gui, "", s:kn_bg_term, "", "")
-call s:hi("ClapFile", s:kn_fg_gui, "", "", "NONE", "", "")
-call s:hi("ClapMatches", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("ClapNoMatchesFound", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
-call s:hi("ClapSelected", s:kn_teal_gui, "", s:kn_teal_term, "", s:bold, "")
-call s:hi("ClapSelectedSign", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
+call s:hi("ClapDir", s:fg, "", "", "")
+call s:hi("ClapDisplay", s:fg, s:bg, "", "")
+call s:hi("ClapFile", s:fg, "", "", "")
+call s:hi("ClapMatches", s:blue1, "", "", "")
+call s:hi("ClapNoMatchesFound", s:yellow, "", "", "")
+call s:hi("ClapSelected", s:teal, "", s:bold, "")
+call s:hi("ClapSelectedSign", s:blue0, "", "", "")
 let s:clap_matches = [
-        \ [s:kn_bluelight_gui,  s:kn_bluelight_term] ,
-        \ [s:kn_blue_gui,  s:kn_blue_term] ,
-        \ [s:kn_cyan_gui, s:kn_cyan_term] ,
+        \ [s:blue1[0], s:blue1[1]] ,
+        \ [s:blue0[0], s:blue0[1]] ,
+        \ [s:cyan0[0], s:cyan0[1]] ,
         \ ]
-for s:kn_night_clap_match_i in range(1,12)
-  let clap_match_color = s:clap_matches[s:kn_night_clap_match_i % len(s:clap_matches) - 1]
-  call s:hi("ClapMatches" . s:kn_night_clap_match_i, clap_match_color[0], "", clap_match_color[1], "", "", "")
-  call s:hi("ClapFuzzyMatches" . s:kn_night_clap_match_i, clap_match_color[0], "", clap_match_color[1], "", "", "")
+for s:clap_match_i in range(1,12)
+  let clap_match_color = s:clap_matches[s:clap_match_i % len(s:clap_matches) - 1]
+  call s:hi("ClapMatches" . s:clap_match_i, [clap_match_color[0], ""], [clap_match_color[1], ""], "", "")
+  call s:hi("ClapFuzzyMatches" . s:clap_match_i, [clap_match_color[0], ""], [clap_match_color[1], ""], "", "")
 endfor
-unlet s:kn_night_clap_match_i
+unlet s:clap_match_i
 hi! link ClapCurrentSelection PmenuSel
 hi! link ClapCurrentSelectionSign ClapSelectedSign
 hi! link ClapInput Pmenu
@@ -624,58 +612,58 @@ hi! link ClapProviderId Type
 
 " vim-indent-guides
 " > nathanaelkane/vim-indent-guides
-call s:hi("IndentGuidesEven", "", s:kn_bg_gui, "", s:kn_bg_term, "", "")
-call s:hi("IndentGuidesOdd", "", s:kn_blacklight_gui, "", s:kn_grey_term, "", "")
+call s:hi("IndentGuidesEven", "", s:bg, "", "")
+call s:hi("IndentGuidesOdd", "", s:black1, "", "")
 
 " vim-plug
 " > junegunn/vim-plug
-call s:hi("plugDeleted", s:kn_red_gui, "", "", s:kn_red_term, "", "")
+call s:hi("plugDeleted", s:red, "", "", "")
 
 " vim-signature
 " > kshenoy/vim-signature
-call s:hi("SignatureMarkText", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
+call s:hi("SignatureMarkText", s:blue1, "", "", "")
 
 " vim-startify
 " > mhinz/vim-startify
-call s:hi("StartifyFile", s:kn_cyanlight_gui, "", s:kn_cyanlight_term, "", "", "")
-call s:hi("StartifyFooter", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("StartifyHeader", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("StartifyNumber", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("StartifyPath", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
+call s:hi("StartifyFile", s:cyan1, "", "", "")
+call s:hi("StartifyFooter", s:teal, "", "", "")
+call s:hi("StartifyHeader", s:blue1, "", "", "")
+call s:hi("StartifyNumber", s:teal, "", "", "")
+call s:hi("StartifyPath", s:blue1, "", "", "")
 hi! link StartifyBracket Delimiter
 hi! link StartifySlash Normal
 hi! link StartifySpecial Comment
 
 " dashboard-nvim
 " > glepnir/dashboard-nvim
-call s:hi("DashboardHeader", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
-call s:hi("DashboardCenter", s:kn_magenta_gui, "", s:kn_magenta_term, "", "", "")
-call s:hi("DashboardFooter", s:kn_yellow_gui, "", s:kn_yellow_term, "", s:italic, "")
-call s:hi("DashboardShortCut", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("DashboardHeader", s:blue0, "", "", "")
+call s:hi("DashboardCenter", s:magenta, "", "", "")
+call s:hi("DashboardFooter", s:yellow, "", s:italic, "")
+call s:hi("DashboardShortCut", s:teal, "", "", "")
 
 " nvim-tree.lua
 " > nvim-tree/nvim-tree.lua
-call s:hi("NvimTreeNormal", s:kn_fg_gui, s:kn_blackest_gui, s:kn_greylight_term, "", "", "")
-call s:hi("NvimTreeWinSeparator", s:kn_blackest_gui, s:kn_blackest_gui, s:kn_grey_term, "", "", "")
-call s:hi("NvimTreeNormalNC", s:kn_fg_gui, s:kn_blackest_gui, s:kn_greylight_term, "", "", "")
-call s:hi("NvimTreeRootFolder", s:kn_magenta_gui, s:kn_blackest_gui, s:kn_magenta_term, "", s:bold, "")
+call s:hi("NvimTreeNormal", s:fg, s:black0, "", "")
+call s:hi("NvimTreeWinSeparator", s:black0, s:black0, "", "")
+call s:hi("NvimTreeNormalNC", s:fg, s:black0, "", "")
+call s:hi("NvimTreeRootFolder", s:magenta, s:black0, s:bold, "")
 
 " barbar.nvim
 " > romgrk/barbar.nvim
-call s:hi("BufferCurrentMod", s:kn_yellow_gui, s:kn_bg_gui, s:kn_yellow_term, "", "", "")
-call s:hi("BufferVisibleMod", s:kn_yellow_gui, s:kn_grey_gui, s:kn_yellow_term, "", "", "")
-call s:hi("BufferInactiveMod", s:kn_yellow_gui, s:kn_blackest_gui, s:kn_yellow_term, "", "", "")
+call s:hi("BufferCurrentMod", s:yellow, s:bg, "", "")
+call s:hi("BufferVisibleMod", s:yellow, s:grey0, "", "")
+call s:hi("BufferInactiveMod", s:yellow, s:black0, "", "")
 
 "+--- Languages ---+
 " Haskell
 " > neovimhaskell/haskell-vim
-call s:hi("haskellPreProc", s:kn_cyan_gui, "", s:kn_cyan_term, "", "", "")
-call s:hi("haskellType", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("haskellPreProc", s:cyan0, "", "", "")
+call s:hi("haskellType", s:teal, "", "", "")
 hi! link haskellPragma haskellPreProc
 
 " JavaScript
 " > pangloss/vim-javascript
-call s:hi("jsGlobalNodeObjects", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", s:italic, "")
+call s:hi("jsGlobalNodeObjects", s:blue1, "", s:italic, "")
 hi! link jsBrackets Delimiter
 hi! link jsFuncCall Function
 hi! link jsFuncParens Delimiter
@@ -686,8 +674,8 @@ hi! link jsRegexpString SpecialChar
 
 " Pandoc
 " > vim-pandoc/vim-pandoc-syntax
-call s:hi("pandocDefinitionBlockTerm", s:kn_teal_gui, "", s:kn_teal_term, "", s:italic, "")
-call s:hi("pandocTableDelims", s:kn_grey_gui, "", s:kn_grey_term, "", "", "")
+call s:hi("pandocDefinitionBlockTerm", s:teal, "", s:italic, "")
+call s:hi("pandocTableDelims", s:grey0, "", "", "")
 hi! link pandocAtxHeader markdownH1
 hi! link pandocBlockQuote markdownBlockquote
 hi! link pandocCiteAnchor Operator
@@ -729,13 +717,13 @@ endif
 
 " TypeScript
 " > HerringtonDarkholme/yats.vim
-call s:hi("typescriptBOMWindowMethod", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", s:italic, "")
-call s:hi("typescriptClassName", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("typescriptDecorator", s:kn_orange_gui, "", s:kn_orange_term, "", "", "")
-call s:hi("typescriptInterfaceName", s:kn_teal_gui, "", s:kn_teal_term, "", s:bold, "")
-call s:hi("typescriptRegexpString", s:kn_yellow_gui, "", s:kn_yellow_term, "", "", "")
+call s:hi("typescriptBOMWindowMethod", s:blue1, "", s:italic, "")
+call s:hi("typescriptClassName", s:teal, "", "", "")
+call s:hi("typescriptDecorator", s:orange, "", "", "")
+call s:hi("typescriptInterfaceName", s:teal, "", s:bold, "")
+call s:hi("typescriptRegexpString", s:yellow, "", "", "")
 " TypeScript JSX
- call s:hi("tsxAttrib", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("tsxAttrib", s:teal, "", "", "")
 hi! link typescriptOperator Operator
 hi! link typescriptBinaryOp Operator
 hi! link typescriptAssign Operator
@@ -770,10 +758,10 @@ hi! link tsxTagName tsxIntrinsicTagName
 
 " Markdown
 " > plasticboy/vim-markdown
-call s:hi("mkdCode", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("mkdFootnote", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", "", "")
-call s:hi("mkdRule", s:kn_cyan_gui, "", s:kn_cyan_term, "", "", "")
-call s:hi("mkdLineBreak", s:kn_blue_gui, "", s:kn_blue_term, "", "", "")
+call s:hi("mkdCode", s:teal, "", "", "")
+call s:hi("mkdFootnote", s:blue1, "", "", "")
+call s:hi("mkdRule", s:cyan0, "", "", "")
+call s:hi("mkdLineBreak", s:blue0, "", "", "")
 hi! link mkdBold Bold
 hi! link mkdItalic Italic
 hi! link mkdString Keyword
@@ -794,8 +782,8 @@ hi! link mkdDelimiter Keyword
 
 " PHP
 " > StanAngeloff/php.vim
-call s:hi("phpClass", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
-call s:hi("phpClassImplements", s:kn_teal_gui, "", s:kn_teal_term, "", s:bold, "")
+call s:hi("phpClass", s:teal, "", "", "")
+call s:hi("phpClassImplements", s:teal, "", s:bold, "")
 hi! link phpClassExtends phpClass
 hi! link phpFunction Function
 hi! link phpMethod Function
@@ -805,21 +793,21 @@ hi! link phpUseClass phpClass
 " > vimwiki/vimwiki
 if !exists("g:vimwiki_hl_headers") || g:vimwiki_hl_headers == 0
   for s:i in range(1,6)
-    call s:hi("VimwikiHeader".s:i, s:kn_bluelight_gui, "", s:kn_bluelight_term, "", s:bold, "")
+    call s:hi("VimwikiHeader".s:i, s:blue1, "", s:bold, "")
   endfor
 else
-  let s:vimwiki_hcolor_guifg = [s:kn_teal_gui, s:kn_bluelight_gui, s:kn_blue_gui, s:kn_cyan_gui, s:kn_green_gui, s:kn_magenta_gui]
-  let s:vimwiki_hcolor_ctermfg = [s:kn_teal_term, s:kn_bluelight_term, s:kn_blue_term, s:kn_cyan_term, s:kn_green_term, s:kn_magenta_term]
+  let s:vimwiki_hcolorfg = [s:teal[0], s:blue1[0], s:blue0[0], s:cyan0[0], s:green[0], s:magenta[0]]
+  let s:vimwiki_hcolor_ctermfg = [s:teal[1], s:blue1[1], s:blue0[1], s:cyan0[1], s:green[1], s:magenta[1]]
   for s:i in range(1,6)
-    call s:hi("VimwikiHeader".s:i, s:vimwiki_hcolor_guifg[s:i-1] , "", s:vimwiki_hcolor_ctermfg[s:i-1], "", s:bold, "")
+    call s:hi("VimwikiHeader".s:i, [s:vimwiki_hcolorfg[s:i-1] , ""], [s:vimwiki_hcolor_ctermfg[s:i-1], ""], s:bold, "")
   endfor
 endif
-call s:hi("VimwikiLink", s:kn_bluelight_gui, "", s:kn_bluelight_term, "", s:underline, "")
+call s:hi("VimwikiLink", s:blue1, "", s:underline, "")
 hi! link VimwikiHeaderChar markdownHeadingDelimiter
 hi! link VimwikiHR Keyword
 hi! link VimwikiList markdownListMarker
 
 " YAML
 " > stephpy/vim-yaml
-call s:hi("yamlKey", s:kn_teal_gui, "", s:kn_teal_term, "", "", "")
+call s:hi("yamlKey", s:teal, "", "", "")
 

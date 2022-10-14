@@ -111,7 +111,9 @@ vim.cmd[[colorscheme kyotonight]]
 
 ** Todos
 
-- [ ] Make code a little cleaner (create generic highlight groups and link them)
+- [x] Make code a little cleaner
+- [ ] Clean lightline and airline code as well
+- [ ] Add modified kitty theme
 - [ ] Re-implement public palette API
 - [ ] Make sidebar windows dark (as nvim tree)
 - [ ] Fix the looks of horizontal split line if sidebar is open
