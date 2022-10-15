@@ -12,7 +12,7 @@ if version > 580
 endif
 
 let g:colors_name = "kyotonight"
-let s:kyotovim_version="0.1.0"
+let s:kyotonight_vim_version="0.1.0"
 set background=dark
 
 let s:none        = ["", ""]
@@ -35,24 +35,24 @@ let s:yellow      = ["#e0af68", "11"]
 let s:green       = ["#9ece6a", "2"]
 let s:magenta     = ["#bb9af7", "5"]
 
-let g:kyotobold = get(g:, "kyotobold", 1)
-let s:bold = (g:kyotobold == 0) ? "" : "bold,"
+let g:kyotonight_bold = get(g:, "kyotonight_bold", 1)
+let s:bold = (g:kyotonight_bold == 0) ? "" : "bold,"
 
-let g:kyotounderline = get(g:, "kyotounderline", 1)
-let s:underline = (g:kyotounderline == 0) ? "NONE," : "underline,"
+let g:kyotonight_underline = get(g:, "kyotonight_underline", 1)
+let s:underline = (g:kyotonight_underline == 0) ? "NONE," : "underline,"
 
-let g:kyotoitalic = get(g:, "kyotoitalic", (has("gui_running") || $TERM_ITALICS == "true"))
-let s:italic = (g:kyotoitalic == 0) ? "" : "italic,"
+let g:kyotonight_italic = get(g:, "kyotonight_italic", (has("gui_running") || $TERM_ITALICS == "true"))
+let s:italic = (g:kyotonight_italic == 0) ? "" : "italic,"
 
-let g:kyotoitalic_comments = get(g:, "kyotoitalic_comments", 0)
-let s:italicize_comments = (g:kyotoitalic_comments == 0) ? "" : get(s:, "italic")
+let g:kyotonight_italic_comments = get(g:, "kyotonight_italic_comments", 0)
+let s:italicize_comments = (g:kyotonight_italic_comments == 0) ? "" : get(s:, "italic")
 
-let g:kyotouniform_status_lines = get(g:, "kyotouniform_status_lines", 0)
+let g:kyotonight_uniform_status_lines = get(g:, "kyotonight_uniform_status_lines", 0)
 
-let g:kyotobold_vertical_split_line = get(g:, "kyotobold_vertical_split_line", 0)
+let g:kyotonight_bold_vertical_split_line = get(g:, "kyotonight_bold_vertical_split_line", 0)
 
-let g:kyotocursor_line_number_background = get(g:, "kyotocursor_line_number_background", 0)
-let g:kyotouniform_diff_background = get(g:, "kyotouniform_diff_background", 0)
+let g:kyotonight_cursor_line_number_background = get(g:, "kyotonight_cursor_line_number_background", 0)
+let g:kyotonight_uniform_diff_background = get(g:, "kyotonight_uniform_diff_background", 0)
 
 function! s:hi(group, fg, bg, attr, guisp)
   let cmd = ""
@@ -164,7 +164,7 @@ endif
 
 "+--- Gutter ---+
 call s:hi("CursorColumn", "", s:bg, "", "")
-if g:kyotocursor_line_number_background == 0
+if g:kyotonight_cursor_line_number_background == 0
   call s:hi("CursorLineNr", s:fg, "", "NONE", "")
 else
   call s:hi("CursorLineNr", s:fg, s:black0, "NONE", "")
@@ -182,7 +182,7 @@ call s:hi("ErrorMsg", s:bg, s:red, "", "")
 call s:hi("ModeMsg", s:fg, "", "", "")
 call s:hi("MoreMsg", s:blue0, "", "", "")
 call s:hi("Question", s:fg, "", "", "")
-if g:kyotouniform_status_lines == 0
+if g:kyotonight_uniform_status_lines == 0
   call s:hi("StatusLine", s:blue0, s:grey0, "NONE", "")
   call s:hi("StatusLineNC", s:fg, s:bg, "NONE", "")
   call s:hi("StatusLineTerm", s:blue0, s:grey0, "NONE", "")
@@ -208,7 +208,7 @@ call s:hi("TabLineSel", s:grey0, s:bg, "NONE", "")
 "+--- Window ---+
 call s:hi("Title", s:fg, "", "NONE", "")
 
-if g:kyotobold_vertical_split_line == 0
+if g:kyotonight_bold_vertical_split_line == 0
   call s:hi("VertSplit", s:grey0, s:bg, "NONE", "")
 else
   call s:hi("VertSplit", s:black0, s:black0, "NONE", "")
@@ -330,7 +330,7 @@ hi! link dtDelim Delimiter
 hi! link dtLocaleValue Keyword
 hi! link dtTypeValue Keyword
 
-if g:kyotouniform_diff_background == 0
+if g:kyotonight_uniform_diff_background == 0
   call s:hi("DiffAdd", s:green, s:black0, "inverse", "")
   call s:hi("DiffChange", s:yellow, s:black0, "inverse", "")
   call s:hi("DiffDelete", s:red, s:black0, "inverse", "")
