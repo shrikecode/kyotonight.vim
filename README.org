@@ -54,7 +54,6 @@ let g:kyotonight_underline = 1
 let g:kyotonight_italic = 0
 let g:kyotonight_italic_comments = 0
 let g:kyotonight_uniform_status_lines = 0
-let g:kyotonight_bold_vertical_split_line = 0
 let g:kyotonight_cursor_line_number_background = 0
 let g:kyotonight_uniform_diff_background = 0
 

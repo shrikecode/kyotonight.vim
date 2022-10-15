@@ -16,6 +16,7 @@ let s:kyotonight_vim_version="0.1.0"
 set background=dark
 
 let s:none        = ["", ""]
+let s:cl          = ["#292e42", ""]
 let s:hl          = ["#33467c", "7"]
 let s:black0      = ["#0f0f14", ""]
 let s:bg          = ["#1a1b26", "0"]
@@ -90,12 +91,12 @@ call s:hi("Underline", "", "", s:underline, "")
 "+--- Editor ---+
 call s:hi("ColorColumn", "", s:black1, "", "")
 call s:hi("Cursor", s:bg, s:fg, "", "")
-call s:hi("CursorLine", "", s:black0, "NONE", "")
+call s:hi("CursorLine", "", s:cl, "NONE", "")
 call s:hi("Error", s:bg, s:red, "", "")
 call s:hi("iCursor", s:black0, s:fg, "", "")
 call s:hi("LineNr", s:grey0, "NONE", "", "")
 call s:hi("MatchParen", s:blue1, s:grey0, "", "")
-call s:hi("NonText", s:black1, "", "", "")
+call s:hi("NonText", s:grey1, "", "", "")
 call s:hi("Normal", s:fg, s:bg, "", "")
 call s:hi("Pmenu", s:fg, s:black1, "NONE", "")
 call s:hi("PmenuSbar", s:fg, s:black1, "", "")
@@ -202,17 +203,13 @@ call s:hi("Search", s:bg, s:blue0, "NONE", "")
 
 "+--- Tabs ---+
 call s:hi("TabLine", s:fg, s:bg, "NONE", "")
-call s:hi("TabLineFill", s:grey0, s:black0, "NONE", "")
-call s:hi("TabLineSel", s:grey0, s:bg, "NONE", "")
+call s:hi("TabLineFill", s:grey0, s:bg, "NONE", "")
+call s:hi("TabLineSel", s:grey1, s:bg, "NONE", "")
 
 "+--- Window ---+
 call s:hi("Title", s:fg, "", "NONE", "")
-
-if g:kyotonight_bold_vertical_split_line == 0
-  call s:hi("VertSplit", s:grey0, s:bg, "NONE", "")
-else
-  call s:hi("VertSplit", s:black0, s:black0, "NONE", "")
-endif
+call s:hi("VertSplit", s:black0, s:black0, "NONE", "")
+hi! link WinSeparator VertSplit
 
 "+----------------------+
 "+ Language Base Groups +
