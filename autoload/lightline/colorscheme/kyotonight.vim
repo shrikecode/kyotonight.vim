@@ -4,7 +4,7 @@
 " Repository: https://github.com/laniusone/kyotonight.vim
 " License: MIT
 
-let s:kyotonight_vim_version="0.1.0"
+let s:kyotonight_vim_version="0.2.0"
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 let s:kn_blackest   = ["#0f0f14", "NONE"]

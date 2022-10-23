@@ -12,7 +12,7 @@ if version > 580
 endif
 
 let g:colors_name = "kyotonight"
-let s:kyotonight_vim_version="0.1.0"
+let s:kyotonight_vim_version="0.2.0"
 set background=dark
 
 let s:none        = ["", ""]
@@ -217,7 +217,7 @@ hi! link WinSeparator VertSplit
 call s:hi("Boolean", s:orange, "", "", "")
 call s:hi("Character", s:green, "", "", "")
 call s:hi("Comment", s:grey1, "", s:italicize_comments, "")
-call s:hi("Conceal", "", "NONE", "", "")
+call s:hi("Conceal", s:grey1, s:black1, s:italic, "")
 call s:hi("Conditional", s:magenta, "", "", "")
 call s:hi("Constant", s:cream, "", s:italic, "")
 call s:hi("Decorator", s:orange, "", "", "")

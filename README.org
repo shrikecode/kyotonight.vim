@@ -108,16 +108,24 @@ vim.cmd[[colorscheme kyotonight]]
 - [x] [[https://github.com/StanAngeloff/php.vim][StanAngeloff/php.vim]]
 - [x] [[https://github.com/stephpy/vim-yaml][stephpy/vim-yaml]]
 
+** Extras
+
+- [[Kitty theme][https://github.com/laniusone/kyotonight.vim/raw/master/extras/kitty/kyotonight.conf]]
+- For Alacritty, Lualine or other look into [[https://github.com/folke/tokyonight.nvim/tree/main/extras][tokyonight.nvim extras]]
+- I'm probably not going to add Lualine theme support, because Folke's theme look perfectly okay with my colorscheme variant
+
 ** Todos
 
 - [x] Make code a little cleaner
 - [ ] Clean lightline and airline code as well
-- [ ] Add modified kitty theme
+- [x] Add modified kitty theme
 - [ ] Re-implement public palette API
 - [ ] Make sidebar windows dark (as nvim tree)
-- [ ] Fix the looks of horizontal split line if sidebar is open
+- [x] Fix the looks of horizontal split line if sidebar is open
 - [ ] Create Lua API?
 - [ ] Contribute theme fixes / additional plugins support back to Nord? (not really related to this repo)
+- [ ] Make sure coc looks good
+- [ ] Look into maybe different cursor color, and visual highlight
 
 ** Ackowledgements
 
