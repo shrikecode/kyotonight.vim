@@ -90,10 +90,10 @@ call s:hi("Underline", "", "", s:underline, "")
 
 "+--- Editor ---+
 call s:hi("ColorColumn", "", s:black1, "", "")
-call s:hi("Cursor", s:bg, s:fg, "", "")
+call s:hi("Cursor", s:bg, s:yellow, "", "")
 call s:hi("CursorLine", "", s:cl, "NONE", "")
 call s:hi("Error", s:bg, s:red, "", "")
-call s:hi("iCursor", s:black0, s:fg, "", "")
+call s:hi("iCursor", s:bg, s:yellow, "", "")
 call s:hi("LineNr", s:grey0, "NONE", "", "")
 call s:hi("MatchParen", s:blue1, s:grey0, "", "")
 call s:hi("NonText", s:grey1, "", "", "")
