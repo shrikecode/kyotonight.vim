@@ -113,6 +113,8 @@ vim.cmd[[colorscheme kyotonight]]
 - [[Kitty theme][https://github.com/laniusone/kyotonight.vim/raw/master/extras/kitty/kyotonight.conf]]
 - For Alacritty, Lualine or other look into [[https://github.com/folke/tokyonight.nvim/tree/main/extras][tokyonight.nvim extras]]
 - I'm probably not going to add Lualine theme support, because Folke's theme look perfectly okay with my colorscheme variant
+- [[https://github.com/laniusone/oomox-arc-kyotonight][GTK Theme]] to go with this colorscheme (or Folke's)
+- Kvantum, i3, rofi and dunst themes coming soon
 
 ** Todos
 
