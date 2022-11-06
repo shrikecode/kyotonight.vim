@@ -117,8 +117,8 @@ vim.cmd[[colorscheme kyotonight]]
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/i3/kyotonight][i3 and i3bar theme]]
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/rofi/KyotoNight.rasi][rofi theme]]
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/dunst/dunstrc][dunst theme]]
-- [[https://github.com/laniusone/kyotonight.vim/extras/kvantum][Kvantum theme]]
-- [[https://github.com/laniusone/kyotonight.vim/extras/i3lock-color][i3lock theme]]
+- [[https://github.com/laniusone/kyotonight.vim/tree/master/extras/kvantum][Kvantum theme]]
+- [[https://github.com/laniusone/kyotonight.vim/tree/master/extras/i3lock-color][i3lock theme]]
 
 ** Todos
 
