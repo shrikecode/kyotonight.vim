@@ -1,0 +1,3 @@
+#+title: i3lock-color
+
+A lockscreen script that uses [[https://github.com/Raymo111/i3lock-color][i3lock-color]] fork of i3lock.

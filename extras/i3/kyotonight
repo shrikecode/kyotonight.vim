@@ -1,0 +1,50 @@
+# name: Kyoto Night
+# license: MIT
+# author: Wojciech M. Wnuk <laniusone@pm.me>
+# upstream: https://github.com/laniusone/kyotonight.vim/raw/master/extras/i3/kyotonight
+#
+# Adjust your bar config accordingly, or remove if you're using other bar.
+
+# colors
+set $bg #24283b
+set $alt #414868
+set $fg #c0caf5
+set $alert #f7768e
+set $warn #ff9e64
+set $info #e0af68
+set $success #9ece6a
+set $primary #d5d6db
+set $secondary #a9b1d6
+set $tertiary #7aa2f7
+
+# i3bar
+bar {
+    position top
+    mode dock
+    tray_output primary
+    tray_padding 4
+    separator_symbol " "
+    strip_workspace_numbers yes
+    status_command i3status
+    colors {
+      background $bg
+      statusline $fg
+      separator $secondary
+
+      focused_workspace  $bg $bg $fg
+      active_workspace   $bg $bg $secondary
+      inactive_workspace $bg $bg $alt
+      urgent_workspace   $bg $bg $alert
+      binding_mode       $bg $bg $alert
+    }
+}
+
+# Window color settings
+# class                 border        backgr.    text    indicator   child_border
+client.focused          $alt          $primary   $bg     $alt        $alt
+client.unfocused        $alt          $bg        $fg     $bg         $bg
+client.focused_inactive $alt          $primary   $alt    $bg         $bg       
+client.placeholder      $alt          $bg        $alt    $bg         $bg       
+client.urgent           $alt          $alert     $fg     $alert      $alert    
+
+client.background       $bg

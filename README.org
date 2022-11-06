@@ -110,11 +110,15 @@ vim.cmd[[colorscheme kyotonight]]
 
 ** Extras
 
-- [[Kitty theme][https://github.com/laniusone/kyotonight.vim/blob/master/extras/kitty/kyotonight.conf]]
+- [[https://github.com/laniusone/kyotonight.vim/blob/master/extras/kitty/kyotonight.conf][Kitty theme]]
 - For Alacritty, Lualine or other look into [[https://github.com/folke/tokyonight.nvim/tree/main/extras][tokyonight.nvim extras]]
 - I'm probably not going to add Lualine theme support, because Folke's theme look perfectly okay with my colorscheme variant
 - [[https://github.com/laniusone/oomox-arc-kyotonight][GTK Theme]] to go with this colorscheme (or Folke's)
-- Kvantum, i3, rofi and dunst themes coming soon
+- [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/i3/kyotonight][i3 and i3bar theme]]
+- [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/rofi/KyotoNight.rasi][rofi theme]]
+- [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/dunst/dunstrc][dunst theme]]
+- [[https://github.com/laniusone/kyotonight.vim/extras/kvantum][Kvantum theme]]
+- [[https://github.com/laniusone/kyotonight.vim/extras/i3lock-color][i3lock theme]]
 
 ** Todos
 
@@ -122,12 +126,11 @@ vim.cmd[[colorscheme kyotonight]]
 - [ ] Clean lightline and airline code as well
 - [x] Add modified kitty theme
 - [ ] Re-implement public palette API
-- [ ] Make sidebar windows dark (as nvim tree)
 - [x] Fix the looks of horizontal split line if sidebar is open
 - [ ] Create Lua API?
 - [ ] Contribute theme fixes / additional plugins support back to Nord? (not really related to this repo)
-- [ ] Make sure coc looks good
-- [ ] Look into maybe different cursor color, and visual highlight
+- [x] Make sure coc looks good
+- [x] Look into maybe different cursor color, and visual highlight
 
 ** Ackowledgements
 
