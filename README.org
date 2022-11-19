@@ -123,7 +123,8 @@ vim.cmd[[colorscheme kyotonight]]
 ** Todos
 
 - [x] Make code a little cleaner
-- [ ] Clean lightline and airline code as well
+- [x] Clean lightline and airline code as well
+- [ ] Fix airline theme (Nord doesn't work as well)
 - [x] Add modified kitty theme
 - [ ] Re-implement public palette API
 - [x] Fix the looks of horizontal split line if sidebar is open
