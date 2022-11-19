@@ -124,12 +124,11 @@ vim.cmd[[colorscheme kyotonight]]
 
 - [x] Make code a little cleaner
 - [x] Clean lightline and airline code as well
-- [ ] Fix airline theme (Nord doesn't work as well)
+- [x] Fix airline theme
 - [x] Add modified kitty theme
 - [ ] Re-implement public palette API
 - [x] Fix the looks of horizontal split line if sidebar is open
 - [ ] Create Lua API?
-- [ ] Contribute theme fixes / additional plugins support back to Nord? (not really related to this repo)
 - [x] Make sure coc looks good
 - [x] Look into maybe different cursor color, and visual highlight
 
