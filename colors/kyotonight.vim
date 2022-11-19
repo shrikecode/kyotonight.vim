@@ -12,18 +12,18 @@ if version > 580
 endif
 
 let g:colors_name = "kyotonight"
-let s:kyotonight_vim_version="0.2.0"
+let s:kyotonight_vim_version="0.2.1"
 set background=dark
 
-let s:none        = ["", ""]
-let s:cl          = ["#292e42", ""]
+let s:none        = ["NONE", "NONE"]
+let s:cl          = ["#292e42", "NONE"]
 let s:hl          = ["#33467c", "7"]
-let s:black0      = ["#0f0f14", ""]
+let s:black0      = ["#0f0f14", "NONE"]
 let s:bg          = ["#1a1b26", "0"]
 let s:black1      = ["#24283b", "8"]
 let s:grey0       = ["#414868", "7"]
 let s:grey1       = ["#565f89", "15"]
-let s:fg          = ["#a9b1d6", ""]
+let s:fg          = ["#a9b1d6", "NONE"]
 let s:cream       = ["#cfc9c2", "15"]
 let s:cyan1       = ["#b4f9f8", "14"]
 let s:teal        = ["#73daca", "6"]
@@ -595,8 +595,8 @@ let s:clap_matches = [
         \ ]
 for s:clap_match_i in range(1,12)
   let clap_match_color = s:clap_matches[s:clap_match_i % len(s:clap_matches) - 1]
-  call s:hi("ClapMatches" . s:clap_match_i, [clap_match_color[0], ""], [clap_match_color[1], ""], "", "")
-  call s:hi("ClapFuzzyMatches" . s:clap_match_i, [clap_match_color[0], ""], [clap_match_color[1], ""], "", "")
+  call s:hi("ClapMatches" . s:clap_match_i, [clap_match_color[0], clap_match_color[1]], ["", ""], "", "")
+  call s:hi("ClapFuzzyMatches" . s:clap_match_i, [clap_match_color[0], clap_match_color[1]], ["", ""], "", "")
 endfor
 unlet s:clap_match_i
 hi! link ClapCurrentSelection PmenuSel
