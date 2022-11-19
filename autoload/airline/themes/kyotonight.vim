@@ -4,7 +4,7 @@
 " Repository: https://github.com/laniusone/kyotonight.vim
 " License: MIT
 
-let s:kyotonight_vim_version="0.2.1"
+let s:kyotonight_vim_version="0.2.2"
 let g:airline#themes#kyotonight#palette = {}
 
 let s:none        = ["NONE", "NONE"]
@@ -30,7 +30,7 @@ let s:magenta     = ["#bb9af7", "5"]
 
 let s:NMain = [s:bg[0], s:blue1[0], s:bg[1], s:blue1[1]]
 let s:NRight = [s:bg[0], s:blue0[0], s:bg[1], s:blue0[1]]
-let s:NMiddle = [s:grey1[0], s:grey0[0], s:grey1[1], s:grey0[1]]
+let s:NMiddle = [s:cream[0], s:grey0[0], s:cream[1], s:grey0[1]]
 let s:NWarn = [s:bg[0], s:yellow[0], s:grey0[1], s:yellow[1]]
 let s:NError = [s:black0[0], s:red[0], s:bg[1], s:red[1]]
 let g:airline#themes#kyotonight#palette.normal = airline#themes#generate_color_map(s:NMain, s:NRight, s:NMiddle)
@@ -39,7 +39,7 @@ let g:airline#themes#kyotonight#palette.normal.airline_error = s:NError
 
 let s:IMain = [s:bg[0], s:green[0], s:bg[1], s:cyan1[1]]
 let s:IRight = [s:bg[0], s:blue0[0], s:bg[1], s:blue0[1]]
-let s:IMiddle = [s:grey1[0], s:grey0[0], s:grey1[1], s:grey0[1]]
+let s:IMiddle = [s:cream[0], s:grey0[0], s:cream[1], s:grey0[1]]
 let s:IWarn = [s:bg[0], s:yellow[0], s:grey0[1], s:yellow[1]]
 let s:IError = [s:black0[0], s:red[0], s:bg[1], s:red[1]]
 let g:airline#themes#kyotonight#palette.insert = airline#themes#generate_color_map(s:IMain, s:IRight, s:IMiddle)
@@ -48,7 +48,7 @@ let g:airline#themes#kyotonight#palette.insert.airline_error = s:IError
 
 let s:RMain = [s:bg[0], s:green[0], s:bg[1], s:green[1]]
 let s:RRight = [s:bg[0], s:blue0[0], s:bg[1], s:blue0[1]]
-let s:RMiddle = [s:grey1[0], s:grey0[0], s:grey1[1], s:grey0[1]]
+let s:RMiddle = [s:cream[0], s:grey0[0], s:cream[1], s:grey0[1]]
 let s:RWarn = [s:bg[0], s:yellow[0], s:grey0[1], s:yellow[1]]
 let s:RError = [s:black0[0], s:red[0], s:bg[1], s:red[1]]
 let g:airline#themes#kyotonight#palette.replace = airline#themes#generate_color_map(s:RMain, s:RRight, s:RMiddle)
@@ -57,19 +57,19 @@ let g:airline#themes#kyotonight#palette.replace.airline_error = s:RError
 
 let s:VMain = [s:bg[0], s:teal[0], s:bg[1], s:teal[1]]
 let s:VRight = [s:bg[0], s:blue0[0], s:bg[1], s:blue0[1]]
-let s:VMiddle = [s:grey1[0], s:grey0[0], s:grey1[1], s:grey0[1]]
+let s:VMiddle = [s:cream[0], s:grey0[0], s:cream[1], s:grey0[1]]
 let s:VWarn = [s:bg[0], s:yellow[0], s:grey0[1], s:yellow[1]]
 let s:VError = [s:black0[0], s:red[0], s:bg[1], s:red[1]]
 let g:airline#themes#kyotonight#palette.visual = airline#themes#generate_color_map(s:VMain, s:VRight, s:VMiddle)
 let g:airline#themes#kyotonight#palette.visual.airline_warning = s:VWarn
 let g:airline#themes#kyotonight#palette.visual.airline_error = s:VError
 
-let s:IAMain = [s:grey1[0], s:grey0[0], s:grey1[1], s:grey0[1]]
-let s:IARight = [s:grey1[0], s:grey0[0], s:grey1[1], s:grey0[1]]
+let s:IAMain = [s:cream[0], s:grey0[0], s:cream[1], s:grey0[1]]
+let s:IARight = [s:cream[0], s:grey0[0], s:cream[1], s:grey0[1]]
 if g:kyotonight_uniform_status_lines == 0
-  let s:IAMiddle = [s:grey1[0], s:bg[0], s:grey1[1], s:bg[1]]
+  let s:IAMiddle = [s:cream[0], s:bg[0], s:cream[1], s:bg[1]]
 else
-  let s:IAMiddle = [s:grey1[0], s:grey0[0], s:grey1[1], s:grey0[1]]
+  let s:IAMiddle = [s:cream[0], s:grey0[0], s:cream[1], s:grey0[1]]
 endif
 let s:IAWarn = [s:bg[0], s:yellow[0], s:grey0[1], s:yellow[1]]
 let s:IAError = [s:black0[0], s:red[0], s:bg[1], s:red[1]]
@@ -77,8 +77,8 @@ let g:airline#themes#kyotonight#palette.inactive = airline#themes#generate_color
 let g:airline#themes#kyotonight#palette.inactive.airline_warning = s:IAWarn
 let g:airline#themes#kyotonight#palette.inactive.airline_error = s:IAError
 
-let g:airline#themes#kyotonight#palette.normal.airline[1] = s:NMiddle
-let g:airline#themes#kyotonight#palette.insert.airline[1] = s:IMiddle
-let g:airline#themes#kyotonight#palette.replace.airline[1] = s:RMiddle
-let g:airline#themes#kyotonight#palette.visual.airline[1] = s:VMiddle
-let g:airline#themes#kyotonight#palette.inactive.airline[1] = s:IAMiddle
+let g:airline#themes#kyotonight#palette.normal.airline_term = s:NMiddle
+let g:airline#themes#kyotonight#palette.insert.airline_term = s:IMiddle
+let g:airline#themes#kyotonight#palette.replace.airline_term = s:RMiddle
+let g:airline#themes#kyotonight#palette.visual.airline_term = s:VMiddle
+let g:airline#themes#kyotonight#palette.inactive.airline_term = s:IAMiddle
