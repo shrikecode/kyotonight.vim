@@ -56,6 +56,7 @@ let g:kyotonight_italic_comments = 0
 let g:kyotonight_uniform_status_lines = 0
 let g:kyotonight_cursor_line_number_background = 0
 let g:kyotonight_uniform_diff_background = 0
+let g:kyotonight_lualine_bold = 1
 
 colorscheme kyotonight
 #+end_src
@@ -73,6 +74,7 @@ g.kyotonight_uniform_status_lines = 0
 g.kyotonight_bold_vertical_split_line = 0
 g.kyotonight_cursor_line_number_background = 0
 g.kyotonight_uniform_diff_background = 0
+g.kyotonight_lualine_bold = 1
 
 vim.cmd[[colorscheme kyotonight]]
 #+end_src
