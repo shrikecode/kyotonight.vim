@@ -79,6 +79,8 @@ vim.cmd[[colorscheme kyotonight]]
 
 ** Supported plugins
 
+- [x] [[https://github.com/itchyny/lightline.vim][itchyny/lightline.vim]]
+- [x] [[https://github.com/vim-airline/vim-airline][vim-airline/vim-airline]]
 - [x] [[https://github.com/glepnir/dashboard-nvim][glepnir/dashboard-nvim]]
 - [x] [[https://github.com/romgrk/barbar.nvim][romgrk/barbar.nvim]]
 - [x] [[https://github.com/nvim-tree/nvim-tree.lua][nvim-tree/nvim-tree.lua]]
@@ -131,6 +133,9 @@ vim.cmd[[colorscheme kyotonight]]
 - [ ] Create Lua API?
 - [x] Make sure coc looks good
 - [x] Look into maybe different cursor color, and visual highlight
+- [ ] Make new screenshots
+- [ ] Try making Lualine theme anyway
+- [ ] Remove these Todos
 
 ** Ackowledgements
 
