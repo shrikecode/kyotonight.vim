@@ -29,22 +29,22 @@ let s:green       = get(g:, "kyotonight#green", ["#9ece6a", "2"])
 let s:magenta     = get(g:, "kyotonight#magenta", ["#bb9af7", "5"])
 
 let s:p.normal.left = [ [ s:bg, s:blue1 ], [ s:grey1, s:bg ] ]
-let s:p.normal.middle = [ [ s:grey1, s:grey0] ]
+let s:p.normal.middle = [ [ s:grey1, s:black1] ]
 let s:p.normal.right = [ [ s:grey1, s:bg ], [ s:grey1, s:bg ] ]
 let s:p.normal.warning = [ [ s:bg, s:yellow ] ]
 let s:p.normal.error = [ [ s:bg, s:red ] ]
 
 let s:p.inactive.left =  [ [ s:bg, s:blue1 ], [ s:grey1, s:bg ] ]
-let s:p.inactive.middle = g:kyotonight_uniform_status_lines == 0 ? [ [ s:grey1, s:bg ] ] : [ [ s:grey1, s:grey0] ]
+let s:p.inactive.middle = g:kyotonight_uniform_status_lines == 0 ? [ [ s:grey1, s:bg ] ] : [ [ s:grey1, s:black1] ]
 let s:p.inactive.right = [ [ s:grey1, s:bg ], [ s:grey1, s:bg ] ]
 
 let s:p.insert.left = [ [ s:bg, s:cyan1 ], [ s:grey1, s:bg ] ]
 let s:p.replace.left = [ [ s:bg, s:yellow ], [ s:grey1, s:bg ] ]
 let s:p.visual.left = [ [ s:bg, s:teal ], [ s:grey1, s:bg ] ]
 
-let s:p.tabline.left = [ [ s:grey1, s:grey0] ]
-let s:p.tabline.middle = [ [ s:grey1, s:grey0] ]
-let s:p.tabline.right = [ [ s:grey1, s:grey0] ]
+let s:p.tabline.left = [ [ s:grey1, s:black1] ]
+let s:p.tabline.middle = [ [ s:grey1, s:black1] ]
+let s:p.tabline.right = [ [ s:grey1, s:black1] ]
 let s:p.tabline.tabsel = [ [ s:bg, s:blue1 ] ]
 
 let g:lightline#colorscheme#kyotonight#palette = lightline#colorscheme#flatten(s:p)
