@@ -80,7 +80,7 @@ vim.cmd[[colorscheme kyotonight]]
 #+end_src
 
 ** Supported plugins
-
+- [x] [[https://github.com/nvim-lualine/lualine.nvim][nvim-lualine/lualine.nvim]]
 - [x] [[https://github.com/itchyny/lightline.vim][itchyny/lightline.vim]]
 - [x] [[https://github.com/vim-airline/vim-airline][vim-airline/vim-airline]]
 - [x] [[https://github.com/glepnir/dashboard-nvim][glepnir/dashboard-nvim]]
@@ -115,14 +115,14 @@ vim.cmd[[colorscheme kyotonight]]
 ** Extras
 
 - [[https://github.com/laniusone/kyotonight.vim/blob/master/extras/kitty/kyotonight.conf][Kitty theme]]
-- For Alacritty, Lualine or other look into [[https://github.com/folke/tokyonight.nvim/tree/main/extras][tokyonight.nvim extras]]
-- I'm probably not going to add Lualine theme support, because Folke's theme look perfectly okay with my colorscheme variant
+- For Alacritty or other look into [[https://github.com/folke/tokyonight.nvim/tree/main/extras][tokyonight.nvim extras]]
 - [[https://github.com/laniusone/oomox-arc-kyotonight][GTK Theme]] to go with this colorscheme (or Folke's)
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/i3/kyotonight][i3 and i3bar theme]]
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/rofi/KyotoNight.rasi][rofi theme]]
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/dunst/dunstrc][dunst theme]]
 - [[https://github.com/laniusone/kyotonight.vim/tree/master/extras/kvantum][Kvantum theme]]
 - [[https://github.com/laniusone/kyotonight.vim/tree/master/extras/i3lock-color][i3lock theme]]
+- Theme also supports lightline, airline and lualine
 
 ** Todos
 
@@ -136,7 +136,7 @@ vim.cmd[[colorscheme kyotonight]]
 - [x] Make sure coc looks good
 - [x] Look into maybe different cursor color, and visual highlight
 - [ ] Make new screenshots
-- [ ] Try making Lualine theme anyway
+- [x] Try making Lualine theme anyway
 - [ ] Remove these Todos
 
 ** Ackowledgements

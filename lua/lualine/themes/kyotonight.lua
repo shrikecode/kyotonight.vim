@@ -1,42 +1,42 @@
-local colors = require('kyotonight')
+local colors = require('kyotonight.colors')
 
 local kyotonight = {}
 
 kyotonight.normal = {
-  a = { bg = colors.blue0[0], fg = colors.black1[0] },
-  b = { bg = colors.black1[0], fg = colors.blue0[0] },
-  c = { bg = colors.black0[0], fg = colors.cream[0] },
+  a = { bg = colors.blue0[1], fg = colors.black1[1] },
+  b = { bg = colors.black1[1], fg = colors.blue0[1] },
+  c = { bg = colors.black0[1], fg = colors.cream[1] },
 }
 
 kyotonight.insert = {
-  a = { bg = colors.green[0], fg = colors.black1[0] },
-  b = { bg = colors.black1[0], fg = colors.green[0] },
+  a = { bg = colors.green[1], fg = colors.black1[1] },
+  b = { bg = colors.black1[1], fg = colors.green[1] },
 }
 
 kyotonight.command = {
-  a = { bg = colors.yellow[0], fg = colors.black1[0]},
-  b = { bg = colors.black1[0], fg = colors.yellow[0] },
+  a = { bg = colors.yellow[1], fg = colors.black1[1]},
+  b = { bg = colors.black1[1], fg = colors.yellow[1] },
 }
 
 kyotonight.visual = {
-  a = { bg = colors.magenta[0], fg = colors.black1[0] },
-  b = { bg = colors.black1[0], fg = colors.magenta[0] },
+  a = { bg = colors.magenta[1], fg = colors.black1[1] },
+  b = { bg = colors.black1[1], fg = colors.magenta[1] },
 }
 
 kyotonight.replace = {
-  a = { bg = colors.red[0], fg = colors.black1[0]},
-  b = { bg = colors.black1[0], fg = colors.red[0] },
+  a = { bg = colors.red[1], fg = colors.black1[1]},
+  b = { bg = colors.black1[1], fg = colors.red[1] },
 }
 
 kyotonight.terminal = {
-  a = {bg = colors.teal[0], fg = colors.black1[0]},
-  b = {bg = colors.black1[0], fg=colors.teal[0] },
+  a = {bg = colors.teal[1], fg = colors.black1[1]},
+  b = {bg = colors.black1[1], fg = colors.teal[1] },
 }
 
 kyotonight.inactive = {
-  a = { bg = colors.black0[0], fg = colors.blue0[0] },
-  b = { bg = colors.black0[0], fg = colors.black1[0], gui = "bold" },
-  c = { bg = colors.black0[0], fg = colors.black1[0] },
+  a = { bg = colors.black0[1], fg = colors.blue0[1] },
+  b = { bg = colors.black0[1], fg = colors.black1[1], gui = "bold" },
+  c = { bg = colors.black0[1], fg = colors.black1[1] },
 }
 
 if vim.g.kyotonight_lualine_bold then
@@ -46,3 +46,4 @@ if vim.g.kyotonight_lualine_bold then
 end
 
 return kyotonight
+
