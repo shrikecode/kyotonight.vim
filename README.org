@@ -128,7 +128,7 @@ vim.cmd[[colorscheme kyotonight]]
 - [x] Clean lightline and airline code as well
 - [x] Fix airline theme
 - [x] Add modified kitty theme
-- [ ] Re-implement public palette API
+- [x] Re-implement public palette API
 - [x] Fix the looks of horizontal split line if sidebar is open
 - [ ] Create Lua API?
 - [x] Make sure coc looks good

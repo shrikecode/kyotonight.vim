@@ -808,3 +808,32 @@ hi! link VimwikiList markdownListMarker
 " > stephpy/vim-yaml
 call s:hi("yamlKey", s:teal, "", "", "")
 
+" Public API
+function! KyotoNightPalette() abort
+    let ret = {}
+    let colors = [ "none",
+                \ "cl",
+                \ "hl",
+                \ "black0",
+                \ "bg",
+                \ "black1",
+                \ "grey0",
+                \ "grey1",
+                \ "fg",
+                \ "cream",
+                \ "cyan1",
+                \ "teal",
+                \ "blue1",
+                \ "blue0",
+                \ "cyan0",
+                \ "red",
+                \ "orange",
+                \ "yellow",
+                \ "green",
+                \ "magenta",
+                \ ]
+    for color in colors
+        execute 'let ret["'.color.'"] = s:'.color
+    endfor
+    return ret
+endfunction
