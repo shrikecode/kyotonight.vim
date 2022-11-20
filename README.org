@@ -4,14 +4,14 @@ A dark, elegant, and easy on the eyes Neovim / Vim theme, based on Tokyo Night c
 
 ** Screenshots
 
-[[https://imgur.com/UllE1x2.png]]
+[[https://imgur.com/9FzWR3h.png]]
 
-[[https://imgur.com/5q4duDz.png]]
+[[https://imgur.com/wPSCAWb.png]]
 
-[[https://imgur.com/OoyKKaF.png]]
+[[https://imgur.com/WAR6ksS.png]]
 
 *** Plugins visible in screenshots
-- [[https://github.com/nvim-lualine/lualine.nvim][nvim-lualine/lualine.nvim]] with [[https://github.com/folke/tokyonight.nvim][folke/tokyonight.nvim]] theme
+- [[https://github.com/nvim-lualine/lualine.nvim][nvim-lualine/lualine.nvim]]
 - [[https://github.com/glepnir/dashboard-nvim][glepnir/dashboard-nvim]]
 - [[https://github.com/romgrk/barbar.nvim][romgrk/barbar.nvim]]
 - [[https://github.com/nvim-tree/nvim-tree.lua][nvim-tree/nvim-tree.lua]]
@@ -43,10 +43,12 @@ use 'laniusone/kyotonight'
 
 ** Configuration
 
-All supported config options are basically ported from Nord Theme, but below is list of them with default values.
+All supported config options are basically ported from Nord Theme, below is list of them with default values.
 Make sure these are configured before calling `colorscheme kyotonight`.
 
-*** VimScript
+*** General config
+
+**** VimScript
 
 #+begin_src vim
 let g:kyotonight_bold = 1
@@ -61,7 +63,7 @@ let g:kyotonight_lualine_bold = 1
 colorscheme kyotonight
 #+end_src
 
-*** Lua
+**** Lua
 
 #+begin_src lua
 local g = vim.g
@@ -77,6 +79,120 @@ g.kyotonight_uniform_diff_background = 0
 g.kyotonight_lualine_bold = 1
 
 vim.cmd[[colorscheme kyotonight]]
+#+end_src
+
+*** Lualine
+
+**** Lua
+
+#+begin_src lua
+require('lualine').setup {
+  options = {
+    theme = 'kyotonight'
+  }
+}
+#+end_src
+
+*** Lightline
+
+Normally Lightline theme should be applied automatically if it isn't set in your configuration already.
+
+**** VimScript
+
+#+begin_src vim
+let g:lightline = {'colorscheme': 'kyotonight'}
+#+end_src
+
+**** Lua
+
+#+begin_src lua
+vim.g.lightline = {colorscheme = 'kyotonight'}
+#+end_src
+
+*** Airline
+
+As with Lightline, the theme should be applied together with colorscheme. You might set it manually as well.
+
+**** VimScript
+
+#+begin_src vim
+let g:airline_theme='kyotonight'
+#+end_src
+
+**** Lua
+
+#+begin_src lua
+vim.g.airline_theme='kyotonight'
+#+end_src
+
+*** Overrriding colors
+
+All of the theme colors can be overriden by setting correct variable.
+
+**** Examples
+
+***** VimScript
+
+#+begin_src vim
+let g:kyotonight#red = ['#fff000', '1'] " hex color, then terminal color number
+#+end_src
+
+***** Lua
+
+#+begin_src lua
+vim.g['kyotonight#red'] = {'#fff000', '1'} -- hex color, then terminal color number
+#+end_src
+
+**** List of color variables
+
+***** VimScript
+
+#+begin_src vim
+g:kyotonight#none   
+g:kyotonight#cl     
+g:kyotonight#hl     
+g:kyotonight#black0 
+g:kyotonight#bg     
+g:kyotonight#black1 
+g:kyotonight#grey0  
+g:kyotonight#grey1  
+g:kyotonight#fg     
+g:kyotonight#cream  
+g:kyotonight#cyan1  
+g:kyotonight#teal   
+g:kyotonight#blue1  
+g:kyotonight#blue0  
+g:kyotonight#cyan0  
+g:kyotonight#red    
+g:kyotonight#orange 
+g:kyotonight#yellow 
+g:kyotonight#green  
+g:kyotonight#magenta
+#+end_src
+
+***** Lua
+
+#+begin_src lua
+vim.g['kyotonight#none']
+vim.g['kyotonight#cl']
+vim.g['kyotonight#hl']
+vim.g['kyotonight#black0']
+vim.g['kyotonight#bg']
+vim.g['kyotonight#black1']
+vim.g['kyotonight#grey0']
+vim.g['kyotonight#grey1']
+vim.g['kyotonight#fg']
+vim.g['kyotonight#cream']
+vim.g['kyotonight#cyan1']
+vim.g['kyotonight#teal']
+vim.g['kyotonight#blue1']
+vim.g['kyotonight#blue0']
+vim.g['kyotonight#cyan0']
+vim.g['kyotonight#red']
+vim.g['kyotonight#orange']
+vim.g['kyotonight#yellow']
+vim.g['kyotonight#green']
+vim.g['kyotonight#magenta']
 #+end_src
 
 ** Supported plugins
@@ -123,21 +239,6 @@ vim.cmd[[colorscheme kyotonight]]
 - [[https://github.com/laniusone/kyotonight.vim/tree/master/extras/kvantum][Kvantum theme]]
 - [[https://github.com/laniusone/kyotonight.vim/tree/master/extras/i3lock-color][i3lock theme]]
 - Theme also supports lightline, airline and lualine
-
-** Todos
-
-- [x] Make code a little cleaner
-- [x] Clean lightline and airline code as well
-- [x] Fix airline theme
-- [x] Add modified kitty theme
-- [x] Re-implement public palette API
-- [x] Fix the looks of horizontal split line if sidebar is open
-- [ ] Create Lua API?
-- [x] Make sure coc looks good
-- [x] Look into maybe different cursor color, and visual highlight
-- [ ] Make new screenshots
-- [x] Try making Lualine theme anyway
-- [ ] Remove these Todos
 
 ** Ackowledgements
 

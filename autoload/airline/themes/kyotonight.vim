@@ -4,29 +4,29 @@
 " Repository: https://github.com/laniusone/kyotonight.vim
 " License: MIT
 
-let s:kyotonight_vim_version="0.2.2"
+let s:kyotonight_vim_version="0.3.0"
 let g:airline#themes#kyotonight#palette = {}
 
-let s:none        = ["NONE", "NONE"]
-let s:cl          = ["#292e42", "NONE"]
-let s:hl          = ["#33467c", "7"]
-let s:black0      = ["#0f0f14", "NONE"]
-let s:bg          = ["#1a1b26", "0"]
-let s:black1      = ["#24283b", "8"]
-let s:grey0       = ["#414868", "7"]
-let s:grey1       = ["#565f89", "15"]
-let s:fg          = ["#a9b1d6", "NONE"]
-let s:cream       = ["#cfc9c2", "15"]
-let s:cyan1       = ["#b4f9f8", "14"]
-let s:teal        = ["#73daca", "6"]
-let s:blue1       = ["#7dcfff", "12"]
-let s:blue0       = ["#7aa2f7", "4"]
-let s:cyan0       = ["#2ac3de", "6"]
-let s:red         = ["#f7768e", "1"]
-let s:orange      = ["#ff9e64", "3"]
-let s:yellow      = ["#e0af68", "11"]
-let s:green       = ["#9ece6a", "2"]
-let s:magenta     = ["#bb9af7", "5"]
+let s:none        = get(g:, "kyotonight#none", ["NONE", "NONE"])
+let s:cl          = get(g:, "kyotonight#cl", ["#292e42", "NONE"])
+let s:hl          = get(g:, "kyotonight#hl", ["#33467c", "7"])
+let s:black0      = get(g:, "kyotonight#black0", ["#0f0f14", "NONE"])
+let s:bg          = get(g:, "kyotonight#bg", ["#1a1b26", "0"])
+let s:black1      = get(g:, "kyotonight#black1", ["#24283b", "8"])
+let s:grey0       = get(g:, "kyotonight#grey0", ["#414868", "7"])
+let s:grey1       = get(g:, "kyotonight#grey1", ["#565f89", "15"])
+let s:fg          = get(g:, "kyotonight#fg", ["#a9b1d6", "NONE"])
+let s:cream       = get(g:, "kyotonight#cream", ["#cfc9c2", "15"])
+let s:cyan1       = get(g:, "kyotonight#cyan1", ["#b4f9f8", "14"])
+let s:teal        = get(g:, "kyotonight#teal", ["#73daca", "6"])
+let s:blue1       = get(g:, "kyotonight#blue1", ["#7dcfff", "12"])
+let s:blue0       = get(g:, "kyotonight#blue0", ["#7aa2f7", "4"])
+let s:cyan0       = get(g:, "kyotonight#cyan0", ["#2ac3de", "6"])
+let s:red         = get(g:, "kyotonight#red", ["#f7768e", "1"])
+let s:orange      = get(g:, "kyotonight#orange", ["#ff9e64", "3"])
+let s:yellow      = get(g:, "kyotonight#yellow", ["#e0af68", "11"])
+let s:green       = get(g:, "kyotonight#green", ["#9ece6a", "2"])
+let s:magenta     = get(g:, "kyotonight#magenta", ["#bb9af7", "5"])
 
 let s:NMain = [s:bg[0], s:blue1[0], s:bg[1], s:blue1[1]]
 let s:NRight = [s:bg[0], s:blue0[0], s:bg[1], s:blue0[1]]
