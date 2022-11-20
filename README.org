@@ -10,11 +10,19 @@ A dark, elegant, and easy on the eyes Neovim / Vim theme, based on Tokyo Night c
 
 [[https://imgur.com/WAR6ksS.png]]
 
+[[https://imgur.com/wEfWPFJ.png]]
+
+[[https://imgur.com/pA1fRJU.png]]
+
+[[https://imgur.com/cr5Y4YP.png]]
+
 *** Plugins visible in screenshots
 - [[https://github.com/nvim-lualine/lualine.nvim][nvim-lualine/lualine.nvim]]
 - [[https://github.com/glepnir/dashboard-nvim][glepnir/dashboard-nvim]]
 - [[https://github.com/romgrk/barbar.nvim][romgrk/barbar.nvim]]
 - [[https://github.com/nvim-tree/nvim-tree.lua][nvim-tree/nvim-tree.lua]]
+- [[https://github.com/itchyny/lightline.vim][itchyny/lightline.vim]] (last screenshot)
+- [[https://github.com/vim-airline/vim-airline][vim-airline/vim-airline]] (screenshots 4 and 5)
 
 ** Why another Tokyo Night VIM theme...
 
