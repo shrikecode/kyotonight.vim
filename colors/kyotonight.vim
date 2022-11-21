@@ -199,7 +199,7 @@ call s:hi("WildMenu", g:kyotonight#blue0, g:kyotonight#bg, "", "")
 
 "+--- Search ---+
 call s:hi("IncSearch", g:kyotonight#cyan1, g:kyotonight#blue0, s:underline, "")
-call s:hi("Search", g:kyotonight#bg, g:kyotonight#blue0, "NONE", "")
+call s:hi("Search", g:kyotonight#black1, g:kyotonight#blue0, "NONE", "")
 
 "+--- Tabs ---+
 call s:hi("TabLine", g:kyotonight#fg, g:kyotonight#bg, "NONE", "")
