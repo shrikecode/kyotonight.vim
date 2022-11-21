@@ -329,12 +329,12 @@ hi! link dtTypeValue Keyword
 
 if g:kyotonight_uniform_diff_background == 0
   call s:hi("DiffAdd", g:kyotonight#green, g:kyotonight#black0, "inverse", "")
-  call s:hi("DiffChange", g:kyotonight#yellow, g:kyotonight#black0, "inverse", "")
+  call s:hi("DiffChange", g:kyotonight#orange, g:kyotonight#black0, "inverse", "")
   call s:hi("DiffDelete", g:kyotonight#red, g:kyotonight#black0, "inverse", "")
   call s:hi("DiffText", g:kyotonight#blue0, g:kyotonight#black0, "inverse", "")
 else
   call s:hi("DiffAdd", g:kyotonight#green, g:kyotonight#bg, "", "")
-  call s:hi("DiffChange", g:kyotonight#yellow, g:kyotonight#bg, "", "")
+  call s:hi("DiffChange", g:kyotonight#orange, g:kyotonight#bg, "", "")
   call s:hi("DiffDelete", g:kyotonight#red, g:kyotonight#bg, "", "")
   call s:hi("DiffText", g:kyotonight#blue0, g:kyotonight#bg, "", "")
 endif
