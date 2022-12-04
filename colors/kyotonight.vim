@@ -653,8 +653,8 @@ call s:hi("BufferInactiveMod", g:kyotonight#yellow, g:kyotonight#black0, "", "")
 
 " nnn.nvim
 " > luukvbaal/nnn.nvim
-call s:hi("NnnNormal", g:kyotonight#fg, g:kyotonight#black0, "", "")
-call s:hi("NnnNormalNC", g:kyotonight#fg, g:kyotonight#black0, "", "")
+call s:hi("NnnNormal", g:kyotonight#fg, g:kyotonight#bg, "", "")
+call s:hi("NnnNormalNC", g:kyotonight#fg, g:kyotonight#bg, "", "")
 
 "+--- Languages ---+
 " Haskell
