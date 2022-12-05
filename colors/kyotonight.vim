@@ -651,6 +651,11 @@ call s:hi("BufferCurrentMod", g:kyotonight#yellow, g:kyotonight#bg, "", "")
 call s:hi("BufferVisibleMod", g:kyotonight#yellow, g:kyotonight#grey0, "", "")
 call s:hi("BufferInactiveMod", g:kyotonight#yellow, g:kyotonight#black0, "", "")
 
+" nnn.nvim
+" > luukvbaal/nnn.nvim
+call s:hi("NnnNormal", g:kyotonight#fg, g:kyotonight#bg, "", "")
+call s:hi("NnnNormalNC", g:kyotonight#fg, g:kyotonight#bg, "", "")
+
 "+--- Languages ---+
 " Haskell
 " > neovimhaskell/haskell-vim

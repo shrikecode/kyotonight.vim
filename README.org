@@ -204,6 +204,7 @@ vim.g['kyotonight#magenta']
 #+end_src
 
 ** Supported plugins
+- [x] [[https://github.com/luukvbaal/nnn.nvim][luukvbaal/nnn.nvim]]
 - [x] [[https://github.com/nvim-lualine/lualine.nvim][nvim-lualine/lualine.nvim]]
 - [x] [[https://github.com/itchyny/lightline.vim][itchyny/lightline.vim]]
 - [x] [[https://github.com/vim-airline/vim-airline][vim-airline/vim-airline]]
