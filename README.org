@@ -40,7 +40,7 @@ The theme's code is based on [[https://github.com/arcticicestudio/nord-vim][Nord
 *** Vim-plug
 
 #+begin_src vim
-Plug 'laniusone/kyotonight'
+Plug 'laniusone/kyotonight.vim'
 #+end_src
 
 *** Packer
