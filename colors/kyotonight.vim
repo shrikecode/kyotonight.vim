@@ -624,10 +624,10 @@ call s:hi("SignatureMarkText", g:kyotonight#blue1, "", "", "")
 " vim-startify
 " > mhinz/vim-startify
 call s:hi("StartifyFile", g:kyotonight#cyan1, "", "", "")
-call s:hi("StartifyFooter", g:kyotonight#teal, "", "", "")
-call s:hi("StartifyHeader", g:kyotonight#blue1, "", "", "")
-call s:hi("StartifyNumber", g:kyotonight#teal, "", "", "")
-call s:hi("StartifyPath", g:kyotonight#blue1, "", "", "")
+call s:hi("StartifyFooter", g:kyotonight#yellow, "", "", "")
+call s:hi("StartifyHeader", g:kyotonight#blue0, "", "", "")
+call s:hi("StartifyNumber", g:kyotonight#magenta, "", "", "")
+call s:hi("StartifyPath", g:kyotonight#blue0, "", "", "")
 hi! link StartifyBracket Delimiter
 hi! link StartifySlash Normal
 hi! link StartifySpecial Comment
