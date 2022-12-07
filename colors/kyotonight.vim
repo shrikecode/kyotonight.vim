@@ -12,7 +12,7 @@ if version > 580
 endif
 
 let g:colors_name = "kyotonight"
-let s:kyotonight_vim_version="0.3.0"
+let s:kyotonight_vim_version="0.3.1"
 set background=dark
 
 let g:kyotonight#none        = get(g:, "kyotonight#none", ["NONE", "NONE"])
@@ -249,6 +249,7 @@ call s:hi("Typedef", g:kyotonight#teal, "", "", "")
 hi! link Annotation Decorator
 hi! link Macro Define
 hi! link PreCondit PreProc
+hi! link Ignore Comment
 
 "+-----------+
 "+ Languages +
