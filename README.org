@@ -14,7 +14,7 @@ A dark, elegant, and easy on the eyes Neovim / Vim theme, based on Tokyo Night c
 
 [[https://imgur.com/NMkAXA7.png]]
 
-[[https://imgur.com/cr5Y4YP.png]]
+[[https://imgur.com/VWalS2r.png]]
 
 *** Plugins visible in screenshots
 - [[https://github.com/nvim-lualine/lualine.nvim][nvim-lualine/lualine.nvim]]
