@@ -47,7 +47,7 @@ Plug 'laniusone/kyotonight.vim'
 *** Packer
 
 #+begin_src lua
-use 'laniusone/kyotonight'
+use 'laniusone/kyotonight.vim'
 #+end_src
 
 ** Configuration
