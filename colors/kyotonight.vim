@@ -50,8 +50,6 @@ let s:italicize_comments = (g:kyotonight_italic_comments == 0) ? "" : get(s:, "i
 
 let g:kyotonight_uniform_status_lines = get(g:, "kyotonight_uniform_status_lines", 0)
 
-let g:kyotonight_bold_vertical_split_line = get(g:, "kyotonight_bold_vertical_split_line", 0)
-
 let g:kyotonight_cursor_line_number_background = get(g:, "kyotonight_cursor_line_number_background", 0)
 let g:kyotonight_uniform_diff_background = get(g:, "kyotonight_uniform_diff_background", 0)
 
@@ -143,15 +141,15 @@ if has('nvim')
   "+- Neovim Diagnostics API -+
   call s:hi("DiagnosticWarn", g:kyotonight#yellow, "", "", "")
   call s:hi("DiagnosticError", g:kyotonight#red, "", "", "")
-  call s:hi("DiagnosticInfo", g:kyotonight#blue0, "", "", "")
+  call s:hi("DiagnosticInfo", g:kyotonight#blue1, "", "", "")
   call s:hi("DiagnosticHint", g:kyotonight#cyan1, "", "", "")
   call s:hi("DiagnosticSignWarn", g:kyotonight#yellow, "", "", "")
   call s:hi("DiagnosticSignError", g:kyotonight#red, "", "", "")
-  call s:hi("DiagnosticSignInfo", g:kyotonight#blue0, "", "", "")
+  call s:hi("DiagnosticSignInfo", g:kyotonight#blue1, "", "", "")
   call s:hi("DiagnosticSignHint", g:kyotonight#cyan1, "", "", "")
   call s:hi("DiagnosticUnderlineWarn", g:kyotonight#yellow, "", "undercurl", "")
   call s:hi("DiagnosticUnderlineError", g:kyotonight#red, "", "undercurl", "")
-  call s:hi("DiagnosticUnderlineInfo", g:kyotonight#blue0, "", "undercurl", "")
+  call s:hi("DiagnosticUnderlineInfo", g:kyotonight#blue1, "", "undercurl", "")
   call s:hi("DiagnosticUnderlineHint", g:kyotonight#cyan1, "", "undercurl", "")
 
   "+- Neovim DocumentHighlight -+
@@ -208,7 +206,7 @@ call s:hi("TabLineSel", g:kyotonight#grey1, g:kyotonight#bg, "NONE", "")
 
 "+--- Window ---+
 call s:hi("Title", g:kyotonight#fg, "", "NONE", "")
-call s:hi("VertSplit", g:kyotonight#black0, g:kyotonight#black0, "NONE", "")
+call s:hi("VertSplit", g:kyotonight#fg, "", "NONE", "")
 hi! link WinSeparator VertSplit
 
 "+----------------------+
@@ -513,11 +511,11 @@ call s:hi("ALEError", g:kyotonight#red, "", "undercurl", "")
 call s:hi("CocWarningHighlight", g:kyotonight#yellow, "", "undercurl", "")
 call s:hi("CocErrorHighlight", g:kyotonight#red, "", "undercurl", "")
 call s:hi("CocInfoHighlight", g:kyotonight#blue1, "", "undercurl", "")
-call s:hi("CocHintHighlight", g:kyotonight#blue0, "", "undercurl", "")
+call s:hi("CocHintHighlight", g:kyotonight#cyan1, "", "undercurl", "")
 call s:hi("CocWarningSign", g:kyotonight#yellow, "", "", "")
 call s:hi("CocErrorSign", g:kyotonight#red, "", "", "")
 call s:hi("CocInfoSign", g:kyotonight#blue1, "", "", "")
-call s:hi("CocHintSign", g:kyotonight#blue0, "", "", "")
+call s:hi("CocHintSign", g:kyotonight#cyan1, "", "", "")
 call s:hi("CocSearch", g:kyotonight#blue1, "", "", "")
 call s:hi("CocNotificationProgress", g:kyotonight#blue1, "", "", "")
 
@@ -529,11 +527,11 @@ if has('nvim')
     call s:hi("LspDiagnosticsDefaultWarning", g:kyotonight#yellow, "", "", "")
     call s:hi("LspDiagnosticsDefaultError", g:kyotonight#red, "", "", "")
     call s:hi("LspDiagnosticsDefaultInformation", g:kyotonight#blue1, "", "", "")
-    call s:hi("LspDiagnosticsDefaultHint", g:kyotonight#blue0, "", "", "")
+    call s:hi("LspDiagnosticsDefaultHint", g:kyotonight#cyan1, "", "", "")
     call s:hi("LspDiagnosticsUnderlineWarning", g:kyotonight#yellow, "", "undercurl", "")
     call s:hi("LspDiagnosticsUnderlineError", g:kyotonight#red, "", "undercurl", "")
     call s:hi("LspDiagnosticsUnderlineInformation", g:kyotonight#blue1, "", "undercurl", "")
-    call s:hi("LspDiagnosticsUnderlineHint", g:kyotonight#blue0, "", "undercurl", "")
+    call s:hi("LspDiagnosticsUnderlineHint", g:kyotonight#cyan1, "", "undercurl", "")
   endif
   
   " Gitsigns
