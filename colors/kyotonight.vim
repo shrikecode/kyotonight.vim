@@ -1,7 +1,7 @@
 " Copyright (C) 2022-present Wojciech M. Wnuk <laniusone@pm.me>
 
 " Project: Kyoto Night Vim
-" Repository: https://github.com/laniusone/kyotonight.vim
+" Repository: https://github.com/voidekh/kyotonight.vim
 " License: MIT
 
 if version > 580
