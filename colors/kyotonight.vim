@@ -655,6 +655,10 @@ call s:hi("BufferInactiveMod", g:kyotonight#yellow, g:kyotonight#black0, "", "")
 call s:hi("NnnNormal", g:kyotonight#fg, g:kyotonight#bg, "", "")
 call s:hi("NnnNormalNC", g:kyotonight#fg, g:kyotonight#bg, "", "")
 
+" vim-cursorword
+" > itchyny/vim-cursorword
+call s:hi("CursorWord", "", g:kyotonight#black0, "", "")
+
 "+--- Languages ---+
 " Haskell
 " > neovimhaskell/haskell-vim

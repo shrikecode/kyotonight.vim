@@ -1,4 +1,5 @@
 #+title: Kyoto Night NeoVim / Vim theme
+#+options: toc:3
 
 A dark, elegant, and easy on the eyes Neovim / Vim theme, based on Tokyo Night color palette, with support for bunch of plugins.
 
