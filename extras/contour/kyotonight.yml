@@ -1,0 +1,90 @@
+# name: Kyoto Night
+# license: MIT
+# author: Wojciech M. Wnuk <laniusone@pm.me>
+# upstream: https://github.com/laniusone/kyotonight.vim/raw/master/extras/contour/kyotonight.yml
+#
+# Copy 'kyotonight' section to your color_schemes in contour.yml and set kyotonight colors in your
+# profile section(s).
+color_schemes:
+    kyotonight:
+        default:
+            background: '#1a1b26'
+            foreground: '#a9b1d6'
+
+        background_image:
+            opacity: 0.5
+
+            blur: false
+
+        cursor:
+            default: '#e0af68'
+            text: '#1a1b26'
+
+        hyperlink_decoration:
+            normal: '#73daca'
+            hover: '#a9b1d6'
+
+        vi_mode_highlight:
+            foreground: '#c0caf5' 
+            foreground_alpha: 1.0
+            background: '#33467c'
+            background_alpha: 1.0
+
+        selection:
+            foreground: '#c0caf5'
+            foreground_alpha: 1.0
+            background: '#33467c'
+            background_alpha: 1.0
+
+        search_highlight:
+            foreground: '#c0caf5'
+            background: '#33467c'
+            foreground_alpha: 1.0
+            background_alpha: 1.0
+
+        search_highlight_focused:
+            foreground: '#c0caf5'
+            background: '#7aa2f7'
+            foreground_alpha: 1.0
+            background_alpha: 1.0
+
+        word_highlight_current:
+            foreground: '#c0caf5'
+            background: '#7aa2f7'
+            foreground_alpha: 1.0
+            background_alpha: 0.5
+
+        word_highlight_other:
+            foreground: '#c0caf5'
+            background: '#33467c'
+            foreground_alpha: 1.0
+            background_alpha: 0.5
+
+        indicator_statusline:
+            foreground: '#73daca'
+            background: '#32344a'
+
+        indicator_statusline_inactive:
+            foreground: '#acb0d0'
+            background: '#32344a'
+
+        normal:
+            black:   '#32344a'
+            red:     '#f7768e'
+            green:   '#9ece6a'
+            yellow:  '#e0af68'
+            blue:    '#7aa2f7'
+            magenta: '#ad8ee6'
+            cyan:    '#73daca'
+            white:   '#787c99'
+
+        bright:
+            black:   '#444b6a'
+            red:     '#ff7a93'
+            green:   '#b9f27c'
+            yellow:  '#ff9e64'
+            blue:    '#7da6ff'
+            magenta: '#bb9af7'
+            cyan:    '#0db9d7'
+            white:   '#acb0d0'
+
