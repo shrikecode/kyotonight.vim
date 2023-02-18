@@ -6,7 +6,7 @@
 # Adjust your bar config accordingly, or remove if you're using other bar.
 
 # colors
-set $bg #24283b
+set $bg #1a1b26
 set $alt #414868
 set $fg #c0caf5
 set $alert #f7768e
@@ -40,11 +40,11 @@ bar {
 }
 
 # Window color settings
-# class                 border        backgr.    text    indicator   child_border
-client.focused          $alt          $primary   $bg     $alt        $alt
-client.unfocused        $alt          $bg        $fg     $bg         $bg
-client.focused_inactive $alt          $primary   $alt    $bg         $bg       
-client.placeholder      $alt          $bg        $alt    $bg         $bg       
-client.urgent           $alt          $alert     $fg     $alert      $alert    
+# class                 border        backgr.    text         indicator   child_border
+client.focused          $alt          $bg        $tertiary    $tertiary   $tertiary
+client.unfocused        $alt          $bg        $alt         $bg         $bg
+client.focused_inactive $alt          $bg        $fg          $bg         $bg
+client.placeholder      $alt          $bg        $alt         $bg         $bg
+client.urgent           $alt          $alert     $bg          $alert      $alert
 
 client.background       $bg
