@@ -1,0 +1,16 @@
+[Scheme]
+Name=KyotoNight Colors
+ColorBackground=#1a1b26
+ColorForeground=#c0caf5
+ColorSelectionBackground=#33467c
+ColorSelection=#c0caf5
+ColorPalette=#15161e;#f7768e;#9ece6a;#e0af68;#7aa2f7;#bb9af7;#7dcfff;#a9b1d6;#414868;#f7768e;#9ece6a;#e0af68;#7aa2f7;#bb9af7;#7dcfff;#c0caf5
+
+[Configuration]
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+ColorCursorUseDefault=FALSE
+ColorCursor=#e0e0afaf6868
+ColorCursorForeground=#1a1a1b1b2626
+ColorSelectionUseDefault=FALSE
+ColorSelection=#c0c0cacaf5f5
+ColorSelectionBackground=#333346467c7c

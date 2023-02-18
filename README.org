@@ -252,6 +252,8 @@ vim.g['kyotonight#magenta']
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/contour/kyotonight.yml][Contour terminal theme]]
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/tym/theme.lua][tym terminal]]
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/tmux/tmux.conf][tmux status line theme]]
+- [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/xfce4-panel/gtk.css][Xfce4 panel theme]]
+- [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/xfce4-terminal/terminalrc][Xfce4 terminal theme]]
 - Theme also supports lightline, airline and lualine
 
 ** Ackowledgements
