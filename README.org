@@ -250,6 +250,7 @@ vim.g['kyotonight#magenta']
 - [[https://github.com/voidekh/kyotonight.vim/tree/master/extras/kvantum][Kvantum theme]]
 - [[https://github.com/voidekh/kyotonight.vim/tree/master/extras/i3lock-color][i3lock theme]]
 - [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/contour/kyotonight.yml][Contour terminal theme]]
+- [[https://github.com/laniusone/kyotonight.vim/raw/master/extras/tym/theme.lua][tym terminal]]
 - Theme also supports lightline, airline and lualine
 
 ** Ackowledgements
