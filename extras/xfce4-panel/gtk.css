@@ -1,0 +1,60 @@
+/* name: Kyoto Night */
+/* license: MIT */
+/* author: Wojciech M. Wnuk <laniusone@pm.me> */
+/* upstream: https://github.com/laniusone/kyotonight.vim/raw/master/extras/xfce4-panel/gtk.css */
+
+/** Workspace switcher */
+.xfce4-panel widget grid button.flat.toggle { 
+  text-align: center;
+  color: #565f89;
+  padding: 3px 3px 5px 3px;
+} 
+
+.xfce4-panel widget grid button.flat.toggle:checked { 
+  text-align: center;
+  background: none;
+  color: #a9b1d6;
+  border-bottom: 2px solid #7aa2f7;
+  padding: 3px;
+}
+
+.xfce4-panel .tasklist .toggle {
+  text-align: center;
+  color: #565f89;
+  padding: 3px 3px 5px 3px;
+}
+
+.xfce4-panel .tasklist .toggle:checked {
+  text-align: center;
+  background: none;
+  color: #a9b1d6;
+  border-bottom: 2px solid #7aa2f7;
+  padding: 3px; 
+}
+
+/** Generic Monitor */
+.genmon_value {
+  padding: 3px 3px 5px 3px;
+}
+
+.genmon_valuebutton {
+  border-bottom: 2px solid #7aa2f7;
+  padding: 3px
+}
+
+/** i3 workspaces plugin */
+.workspace {
+    color: #292e42;
+    padding: 3px 3px 5px 3px;
+}
+.workspace.visible {
+    color: #565f89;
+}
+.workspace.focused { 
+    color: #a9b1d6;
+    border-bottom: 2px solid #7aa2f7;
+    padding: 3px
+}
+.workspace.urgent {
+    color: #f7768e;
+}
