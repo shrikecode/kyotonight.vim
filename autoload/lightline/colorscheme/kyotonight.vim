@@ -4,7 +4,7 @@
 " Repository: https://github.com/voidekh/kyotonight.vim
 " License: MIT
 
-let s:kyotonight_vim_version="0.3.1"
+let s:kyotonight_vim_version="0.3.2"
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 let s:none        = get(g:, "kyotonight#none", ["NONE", "NONE"])
@@ -29,9 +29,9 @@ let s:green       = get(g:, "kyotonight#green", ["#9ece6a", "2"])
 let s:magenta     = get(g:, "kyotonight#magenta", ["#bb9af7", "5"])
 
 let s:p.normal.left = [ [ s:black1, s:blue0 ], [ s:blue0, s:black1 ] ]
-let s:p.normal.middle = [ [ s:fg, s:black0] ]
-let s:p.normal.right = [ [ s:black1, s:blue0 ], [ s:grey1, s:bg ] ]
-let s:p.normal.warning = [ [ s:black1, s:cyan1 ] ]
+let s:p.normal.middle = [ [ s:blue0, s:black0] ]
+let s:p.normal.right = [ [ s:black1, s:blue0 ], [ s:blue0, s:black1 ] ]
+let s:p.normal.warning = [ [ s:black1, s:yellow ] ]
 let s:p.normal.error = [ [ s:black1, s:red ] ]
 
 let s:p.inactive.left =  [ [ s:black1, s:grey1 ], [ s:grey1, s:black1 ] ]
@@ -39,11 +39,17 @@ let s:p.inactive.middle = g:kyotonight_uniform_status_lines == 0 ? [ [ s:grey1, 
 let s:p.inactive.right = [ [ s:black1, s:grey1 ], [ s:grey1, s:black1 ] ]
 
 let s:p.insert.left = [ [ s:black1, s:green ], [ s:green, s:black1 ] ]
+let s:p.insert.middle = [ [ s:green, s:black0 ] ]
+let s:p.insert.right = [ [ s:black1, s:green ], [ s:green, s:black1 ] ]
 let s:p.replace.left = [ [ s:black1, s:red ], [ s:red, s:black1 ] ]
+let s:p.replace.middle = [ [ s:red, s:black0 ] ]
+let s:p.replace.right = [ [ s:black1, s:red ], [ s:red, s:black1 ] ]
 let s:p.visual.left = [ [ s:black1, s:magenta ], [ s:magenta, s:black1 ] ]
+let s:p.visual.middle = [ [ s:magenta, s:black0 ] ]
+let s:p.visual.right = [ [ s:black1, s:magenta ], [ s:magenta, s:black1 ] ]
 
 let s:p.tabline.left = [ [ s:grey1, s:black1] ]
-let s:p.tabline.middle = [ [ s:grey1, s:black1] ]
+let s:p.tabline.middle = [ [ s:grey1, s:black0] ]
 let s:p.tabline.right = [ [ s:grey1, s:black1] ]
 let s:p.tabline.tabsel = [ [ s:black1, s:blue0 ] ]
 

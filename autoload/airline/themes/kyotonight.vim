@@ -4,7 +4,7 @@
 " Repository: https://github.com/voidekh/kyotonight.vim
 " License: MIT
 
-let s:kyotonight_vim_version="0.3.1"
+let s:kyotonight_vim_version="0.3.2"
 let g:airline#themes#kyotonight#palette = {}
 
 let s:none        = get(g:, "kyotonight#none", ["NONE", "NONE"])
