@@ -48,10 +48,10 @@ let s:p.visual.left = [ [ s:black1, s:magenta ], [ s:magenta, s:black1 ] ]
 let s:p.visual.middle = [ [ s:magenta, s:black0 ] ]
 let s:p.visual.right = [ [ s:black1, s:magenta ], [ s:magenta, s:black1 ] ]
 
-let s:p.tabline.left = [ [ s:grey1, s:black1] ]
-let s:p.tabline.middle = [ [ s:grey1, s:black0] ]
-let s:p.tabline.right = [ [ s:grey1, s:black1] ]
-let s:p.tabline.tabsel = [ [ s:black1, s:blue0 ] ]
+let s:p.tabline.left = [ [ s:grey1, s:bg] ]
+let s:p.tabline.middle = [ [ s:grey1, s:bg] ]
+let s:p.tabline.right = [ [ s:grey1, s:bg] ]
+let s:p.tabline.tabsel = [ [ s:fg, s:bg ] ]
 
 let g:lightline#colorscheme#kyotonight#palette = lightline#colorscheme#flatten(s:p)
 
