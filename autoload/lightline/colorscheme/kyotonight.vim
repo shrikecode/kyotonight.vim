@@ -31,8 +31,10 @@ let s:magenta     = get(g:, "kyotonight#magenta", ["#bb9af7", "5"])
 let s:p.normal.left = [ [ s:black1, s:blue0 ], [ s:blue0, s:black1 ] ]
 let s:p.normal.middle = [ [ s:blue0, s:black0] ]
 let s:p.normal.right = [ [ s:black1, s:blue0 ], [ s:blue0, s:black1 ] ]
-let s:p.normal.warning = [ [ s:black1, s:yellow ] ]
-let s:p.normal.error = [ [ s:black1, s:red ] ]
+let s:p.normal.warning = [ [ s:yellow, s:black1 ] ]
+let s:p.normal.error = [ [ s:red, s:black1 ] ]
+let s:p.normal.info = [ [ s:blue1, s:black1 ] ]
+let s:p.normal.hint = [ [ s:cyan1, s:black1 ] ]
 
 let s:p.inactive.left =  [ [ s:black1, s:grey1 ], [ s:grey1, s:black1 ] ]
 let s:p.inactive.middle = g:kyotonight_uniform_status_lines == 0 ? [ [ s:grey1, s:black0 ] ] : [ [ s:fg, s:black0] ]
