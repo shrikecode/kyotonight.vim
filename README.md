@@ -285,11 +285,11 @@ All of the theme colors can be overriden by setting correct variable.
 - [dunst theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/dunst/dunstrc)
 - [Kvantum theme](https://github.com/voidekh/kyotonight.vim/tree/master/extras/kvantum)
 - [i3lock theme](https://github.com/voidekh/kyotonight.vim/tree/master/extras/i3lock-color)
-- [Contour terminal theme](https://github.com/laniusone/kyotonight.vim/raw/master/extras/contour/kyotonight.yml)
-- [tym terminal](https://github.com/laniusone/kyotonight.vim/raw/master/extras/tym/theme.lua)
-- [tmux status line theme](https://github.com/laniusone/kyotonight.vim/raw/master/extras/tmux/tmux.conf)
-- [Xfce4 panel theme](https://github.com/laniusone/kyotonight.vim/raw/master/extras/xfce4-panel/gtk.css)
-- [Xfce4 terminal theme](https://github.com/laniusone/kyotonight.vim/raw/master/extras/xfce4-terminal/terminalrc)
+- [Contour terminal theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/contour/kyotonight.yml)
+- [tym terminal](https://github.com/voidekh/kyotonight.vim/raw/master/extras/tym/theme.lua)
+- [tmux status line theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/tmux/tmux.conf)
+- [Xfce4 panel theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/xfce4-panel/gtk.css)
+- [Xfce4 terminal theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/xfce4-terminal/terminalrc)
 - Theme also supports lightline, airline and lualine
 
 ## Ackowledgements
