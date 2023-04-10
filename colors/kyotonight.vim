@@ -12,7 +12,7 @@ if version > 580
 endif
 
 let g:colors_name = "kyotonight"
-let s:kyotonight_vim_version="0.3.2"
+let s:kyotonight_vim_version="1.0.0"
 set background=dark
 
 let g:kyotonight#none        = get(g:, "kyotonight#none", ["NONE", "NONE"])

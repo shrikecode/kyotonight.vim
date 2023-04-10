@@ -4,7 +4,7 @@
 " Repository: https://github.com/voidekh/kyotonight.vim
 " License: MIT
 
-let s:kyotonight_vim_version="0.3.2"
+let s:kyotonight_vim_version="1.0.0"
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 let s:none        = get(g:, "kyotonight#none", ["NONE", "NONE"])
