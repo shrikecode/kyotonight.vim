@@ -1,7 +1,7 @@
 -- name: Kyoto Night
 -- license: MIT
 -- author: Wojciech M. Wnuk <laniusone@pm.me>
--- upstream: https://github.com/voidekh/kyotonight.vim/raw/master/extras/tym/theme.lua
+-- upstream: https://github.com/sigmavim/kyotonight/raw/master/extras/tym/theme.lua
 
 local bg = '#1a1b26'
 local fg = '#a9b1d6'

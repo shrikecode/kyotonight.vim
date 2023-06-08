@@ -1,7 +1,7 @@
 # name: Kyoto Night
 # license: MIT
 # author: Wojciech M. Wnuk <laniusone@pm.me>
-# upstream: https://github.com/voidekh/kyotonight.vim/raw/master/extras/contour/kyotonight.yml
+# upstream: https://github.com/sigmavim/kyotonight/raw/master/extras/contour/kyotonight.yml
 #
 # Copy 'kyotonight' section to your color_schemes in contour.yml and set kyotonight colors in your
 # profile section(s).
