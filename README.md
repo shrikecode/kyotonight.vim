@@ -74,13 +74,13 @@ least initally).
 ### Vim-plug
 
 ```vim
-Plug 'voidekh/kyotonight.vim'
+Plug 'shrikecode/kyotonight.vim'
 ```
 
 ### Packer
 
 ```lua
-use 'voidekh/kyotonight.vim'
+use 'shrikecode/kyotonight.vim'
 ```
 
 ## Configuration
@@ -277,19 +277,19 @@ All of the theme colors can be overriden by setting correct variable.
 
 ## Extras
 
-- [Kitty theme](https://github.com/voidekh/kyotonight.vim/blob/master/extras/kitty/kyotonight.conf)
+- [Kitty theme](https://github.com/shrikecode/kyotonight.vim/blob/master/extras/kitty/kyotonight.conf)
 - For Alacritty or other look into [tokyonight.nvim extras](https://github.com/folke/tokyonight.nvim/tree/main/extras)
-- [GTK Theme](https://github.com/voidekh/oomox-arc-kyotonight) to go with this colorscheme (or Folke's)
-- [i3 and i3bar theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/i3/kyotonight)
-- [rofi theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/rofi/KyotoNight.rasi)
-- [dunst theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/dunst/dunstrc)
-- [Kvantum theme](https://github.com/voidekh/kyotonight.vim/tree/master/extras/kvantum)
-- [i3lock theme](https://github.com/voidekh/kyotonight.vim/tree/master/extras/i3lock-color)
-- [Contour terminal theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/contour/kyotonight.yml)
-- [tym terminal](https://github.com/voidekh/kyotonight.vim/raw/master/extras/tym/theme.lua)
-- [tmux status line theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/tmux/tmux.conf)
-- [Xfce4 panel theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/xfce4-panel/gtk.css)
-- [Xfce4 terminal theme](https://github.com/voidekh/kyotonight.vim/raw/master/extras/xfce4-terminal/terminalrc)
+- [GTK Theme](https://github.com/shrikecode/oomox-arc-kyotonight) to go with this colorscheme (or Folke's)
+- [i3 and i3bar theme](https://github.com/shrikecode/kyotonight.vim/raw/master/extras/i3/kyotonight)
+- [rofi theme](https://github.com/shrikecode/kyotonight.vim/raw/master/extras/rofi/KyotoNight.rasi)
+- [dunst theme](https://github.com/shrikecode/kyotonight.vim/raw/master/extras/dunst/dunstrc)
+- [Kvantum theme](https://github.com/shrikecode/kyotonight.vim/tree/master/extras/kvantum)
+- [i3lock theme](https://github.com/shrikecode/kyotonight.vim/tree/master/extras/i3lock-color)
+- [Contour terminal theme](https://github.com/shrikecode/kyotonight.vim/raw/master/extras/contour/kyotonight.yml)
+- [tym terminal](https://github.com/shrikecode/kyotonight.vim/raw/master/extras/tym/theme.lua)
+- [tmux status line theme](https://github.com/shrikecode/kyotonight.vim/raw/master/extras/tmux/tmux.conf)
+- [Xfce4 panel theme](https://github.com/shrikecode/kyotonight.vim/raw/master/extras/xfce4-panel/gtk.css)
+- [Xfce4 terminal theme](https://github.com/shrikecode/kyotonight.vim/raw/master/extras/xfce4-terminal/terminalrc)
 - Theme also supports lightline, airline and lualine
 
 ## Ackowledgements
