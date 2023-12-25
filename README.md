@@ -278,6 +278,7 @@ All of the theme colors can be overriden by setting correct variable.
 ## Extras
 
 - [Doom Emacs Theme](https://github.com/shrikecode/doom-kyoto-night-theme)
+- [base16 scheme](https://github.com/shrikecode/base16-kyotonight-scheme)
 - [Kitty theme](https://github.com/shrikecode/kyotonight.vim/blob/master/extras/kitty/kyotonight.conf)
 - For Alacritty or other look into [tokyonight.nvim extras](https://github.com/folke/tokyonight.nvim/tree/main/extras)
 - [GTK Theme](https://github.com/shrikecode/oomox-arc-kyotonight) to go with this colorscheme (or Folke's)
